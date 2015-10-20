@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :instructor_courses
+
   resources :notes
 
   resources :attendences
