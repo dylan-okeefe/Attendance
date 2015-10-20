@@ -11,36 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020151515) do
+ActiveRecord::Schema.define(version: 20151020154410) do
 
   create_table "attendences", force: :cascade do |t|
-    t.integer "class_id"
-    t.integer "student_id"
-    t.date    "date"
-    t.time    "time"
+    t.integer  "class_id"
+    t.integer  "student_id"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "classes", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "instructor_classes", force: :cascade do |t|
-    t.integer "instructor_id"
-    t.integer "class_id"
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "instructors", force: :cascade do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "teacher_id"
-    t.text    "text"
+    t.integer  "student_id"
+    t.integer  "teacher_id"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
