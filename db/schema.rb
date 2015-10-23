@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20151020165946) do
   create_table "attendences", force: :cascade do |t|
     t.integer  "class_id"
     t.integer  "student_id"
-    t.date     "date"
-    t.time     "time"
+    t.boolean  "present"
+    t.boolean  "late"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
