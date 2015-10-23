@@ -79,5 +79,4 @@ class AttendencesController < ApplicationController
     def attendence_params
       params.require(:attendence).permit(:class_id, :student_id, :present, :late, :date, :time)
     end
-
 end
