@@ -1,3 +1,102 @@
 // Place all the styles related to the Instructors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+​
+div.container div.centered button.btn.btn-primary.btn-lg.outline {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+​
+div.container div.centered button.btn.btn-primary.btn-lg.outline:first-child {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.container {
+  text-align: center;
+}
+.centered {
+  display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+
+    /** Make it fit tightly around it's children */
+    display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+
+    /**
+     * Set the top of the dropdown menu to be positioned 100%
+     * from the top of the container, and aligned to the left.
+     */
+    top: 100%;
+    left: 0;
+
+    /** Allow no empty space between this and .dropdown */
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+
+    /** Show dropdown menu */
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    display: none;
+    margin: 0;
+
+    /****************
+     ** NEW STYLES **
+     ****************/
+
+    list-style: none; /** Remove list bullets */
+    width: 100%; /** Set the width to 100% of it's parent */
+    padding: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/** Button Styles **/
+.dropdown button {
+    background: #29b8e5;
+    color: #FFFFFF;
+    border: none;
+    margin: 0;
+    padding: 0.4em 0.8em;
+    font-size: 3em;
+}
+
+/** List Item Styles **/
+.dropdown a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    background: #CCCCCC;
+    color: #333333;
+}
+
+/** List Item Hover Styles **/
+.dropdown a:hover {
+    background: #BBBBBB;
+}
