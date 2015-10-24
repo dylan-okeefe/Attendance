@@ -54,6 +54,7 @@ group :test, :development do
   gem 'pry'
   gem 'guard-rspec', require: false
   gem 'thin'
+  gem 'rails_db'
 end
 
 group :production do

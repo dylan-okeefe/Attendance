@@ -55,6 +55,6 @@ class StudentsController < ApplicationController
 
 
     def student_params
-      params[:name]
+      params[:first_name, :last_name]
     end
 end
