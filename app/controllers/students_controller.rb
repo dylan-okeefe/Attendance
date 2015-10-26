@@ -1,21 +1,21 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.all
+    @student = Student.new
   end
 
   def show
   end
 
   def new
-    @student = student.new
+    @student = Student.new
   end
 
   def edit
   end
 
   def create
-    @student = student.new(student_params)
-
+    @student = Student.create(student_params)
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'student was successfully created.' }
@@ -55,6 +55,6 @@ class StudentsController < ApplicationController
 
 
     def student_params
-      params[:first_name, :last_name]
+      params.require(:student).permit(:first_name, :last_name, :image)
     end
 end

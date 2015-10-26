@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
 def index
-    @courses = Courses.all
+    @courses = Course.all
   end
 
   def show
@@ -15,7 +15,7 @@ def index
   end
 
   def create
-    binding.pry
+    #binding.pry
     @course = Course.create(course_params)
 
     respond_to do |format|

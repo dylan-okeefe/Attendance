@@ -17,7 +17,7 @@
         <div>
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <%if !user_signed_in? %>  
+            <% if !user_signed_in? %>  
               <li><%= link_to("Log In", new_user_session_path) %></li>
               <li><%= link_to("Sign Up", new_user_registration_path) %></li>
             <%else%>
@@ -30,28 +30,17 @@
 
 </head>
 <body>
-  <%= render 'form' %>
-  
-  <form id="centered">
-    <button type="button" class="btn btn-primary btn-lg outline" id="button" onclick="attend();">
-      <h1>Check In</h1>
-    </button> 
-  </form>
-  
-  <script>
-    // $('#centered button').click(function(){
-    //   alert('omrika');
-    // });
+ <%= render 'form' %>
 
-  function attend(){
-    var form = document.createElement('form');
-    // form.setAttribute('method', 'post');
-    form.setAttribute('action', 'attendences');
-    form.style.display = 'hidden';
-    document.body.appendChild(form)
-    form.submit();
-  }
-  </script>
-  
+<div id="pieChart"></div>
+<!-- <form>
+  date <input type='text' name='date'><%= Time.now.strftime('%m/%d/%y') %></input>
+  time <input type='text' name='time'><%= Time.now.strftime('%I:%M %p') %></input>
+</form>  -->
+<!-- if the time now is after 9:15 am your late if its before you're present.
+rails form. If student press submit with above comparison logic then do this thing.
+ -->
+
+
 </body>
 </html>
