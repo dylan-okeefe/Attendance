@@ -27,6 +27,7 @@ function navbar_dropdown(){
 
 }
 
+
 //at this point this form is being shown after button is being clicked
 //i actually want the form to not show, however still be generated in the backend, autofilled
 //the 'student' should not see the form, they should just submit their attendance and be directed
@@ -46,11 +47,9 @@ function navbar_dropdown(){
 //     });
 // }
 
-
-
-
 document.onreadystatechange = function() {
     if (document.readyState == 'complete') {
         navbar_dropdown();
+
     }
 };

@@ -1,31 +1,28 @@
-class AttendencesController < ApplicationController
+  class AttendencesController < ApplicationController
   
   def index
     @attendences = Attendence.all
   end
 
   def show
-    #specific student params student id
-    # @attendences = Attendence.select(student_id: params[:id])
-    @attendences = Attendence.all
-    # present = @attendences.select(student_id: 2).sele
+    @attendences = Attendence.select(current_user.student_id)
+    present = @attendences.where(:present=>true).count();
+    late = @attendences.where(:late=>true).count();
     attendence_hash = {
-    
       "data": {
-
-      "content": [
-
-        {"label":"Present","value": 50},
-
-        {"label":"Lates", "value": 41},
-
-
-        {"label":"Absent", "value": 5}
-
+        "content": [
+          {
+            "label": "Present",
+            "value": present
+          },
+          {
+            "label": "Lates",
+            "value": late
+          }
         ]
       } 
-   }
-   render json: attendence_hash.to_json
+    }
+    render json: attendence_hash.to_json
   end
 
   def new
@@ -36,7 +33,7 @@ class AttendencesController < ApplicationController
   end
 
   def create
-    @attendence = Attendence.new(attendence_params)
+    @attendence = Attendence.create(attendence_params)
 
     respond_to do |format|
       if @attendence.save
@@ -77,6 +74,6 @@ class AttendencesController < ApplicationController
 
 
     def attendence_params
-      params.require(:attendence).permit(:class_id, :student_id, :present, :late, :date, :time)
+      params[:class_id, :student_id, :present, :late, :date, :time]
     end
 end

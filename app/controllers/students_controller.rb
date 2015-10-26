@@ -14,8 +14,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = student.new(student_params)
-
+    @student = Student.create(student_params)
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'student was successfully created.' }

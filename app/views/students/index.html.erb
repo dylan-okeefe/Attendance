@@ -28,14 +28,26 @@
 </head>
 <body>
 
-<div id="pieChart"></div>
+  <form id="centered">
+    <button type="button" class="btn btn-primary btn-lg outline" id="button" onclick="attend();">
+      <h1>Check In</h1>
+    </button> 
+  </form>
+  
+  <script>
+    // $('#centered button').click(function(){
+    //   alert('omrika');
+    // });
 
-
-  <div id="centered">
-    <button class="btn btn-primary btn-lg outline">
-      <h1>Get To Class</h1>
-    </button>
-  </div>
-
+  function attend(){
+    var form = document.createElement('form');
+    // form.setAttribute('method', 'post');
+    form.setAttribute('action', 'attendences');
+    form.style.display = 'hidden';
+    document.body.appendChild(form)
+    form.submit();
+  }
+  </script>
+  
 </body>
 </html>

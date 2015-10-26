@@ -4,10 +4,9 @@
 //everytime you visit the page you make a get request
 
   // /attendences/current_user.id .. something along those lines
-  
-  $.getJSON('/attendences/1').done(function(data){
-      var pie = new d3pie("pieChart", data);
-  });
+  //when i click a button i want the student to be present or late for that day. and
+  //it updates the graph.
 
-
-    
+$.getJSON('/attendences/1').success(function(data){
+    var pie = new d3pie("pieChart", data);
+});
