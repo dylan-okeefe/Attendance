@@ -1,13 +1,14 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.all
+    @student = Student.new
   end
 
   def show
   end
 
   def new
-    @student = student.new
+    @student = Student.new
   end
 
   def edit
@@ -54,6 +55,6 @@ class StudentsController < ApplicationController
 
 
     def student_params
-      params[:first_name, :last_name]
+      params.require(:student).permit(:first_name, :last_name, :image)
     end
 end
