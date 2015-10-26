@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Courses.all
+    @courses = Course.all
   end
 
   def show
@@ -15,7 +15,6 @@ class CoursesController < ApplicationController
   end
 
   def create
-    binding.pry
     @course = Course.create(course_params)
 
     respond_to do |format|
@@ -57,7 +56,7 @@ class CoursesController < ApplicationController
 
 
     def course_params
-      params[:name]
+      params.require(:course).permit(:name)
     end
 
 end
