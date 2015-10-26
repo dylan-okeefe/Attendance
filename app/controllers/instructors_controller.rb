@@ -1,14 +1,18 @@
 class InstructorsController < ApplicationController
 
-<<<<<<< HEAD
 	def index
 		@instructor = Instructor.all
 	end
+ 
+  	def show
+    	@instructor = Instructor.find(params[:id])
+  	end
 
 	def new
 	end
 
-	
+	def edit 
+	end
 
 	def create
 		@instructor = Instructor.new(instructor_params)
@@ -23,9 +27,7 @@ class InstructorsController < ApplicationController
 			end
 		end
 	end
-
-	def edit 
-	end
+	
 
 	def update
 	end
@@ -42,10 +44,6 @@ class InstructorsController < ApplicationController
 	def instructor_params
 		params.require(:instructor).permit(:name)
 	end
-=======
-  def show
-    @instructor = Instructor.find(params[:id])
-  end
 
->>>>>>> master
+
 end
