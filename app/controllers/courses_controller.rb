@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
-def index
+  def index
     @courses = Course.all
   end
 
@@ -15,7 +15,6 @@ def index
   end
 
   def create
-  
     @course = Course.create(course_params)
 
     respond_to do |format|
@@ -57,6 +56,6 @@ def index
 
 
     def course_params
-      params[:name]
+      params.require(:course).permit(:name)
     end
 end

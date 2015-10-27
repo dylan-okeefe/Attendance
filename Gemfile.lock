@@ -97,6 +97,11 @@ GEM
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
+    geocoder (1.2.11)
+    geokit (1.10.0)
+    geokit-rails (2.1.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     google-analytics-rails (0.0.6)
@@ -290,6 +295,8 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  geocoder
+  geokit-rails
   google-analytics-rails
   guard-rspec
   jbuilder (~> 2.0)

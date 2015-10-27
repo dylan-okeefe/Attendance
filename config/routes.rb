@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+
+  resources :course_locations
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :instructor_courses

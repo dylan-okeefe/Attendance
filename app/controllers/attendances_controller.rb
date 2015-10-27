@@ -1,80 +1,64 @@
-  class attendancesController < ApplicationController
-  
+class AttendencesController < ApplicationController
+
   def index
-    @attendances = Attendance.all
+    @attendences = Attendence.all
   end
+
   def show
-    @attendances = Attendance.select(current_user.student_id)
-    present = @attendances.where(:present=>true).count();
-    late = @attendances.where(:late=>true).count();
-    Attendance_hash = {
-      "data": {
-        "content": [
-          {
-            "label": "Present",
-            "value": present
-          },
-          {
-            "label": "Lates",
-            "value": late
-          }
-        ]
-      } 
-    }
-    render json: Attendance_hash.to_json
   end
 
   def new
-    @Attendance = Attendance.new
+    @attendence = Attendence.new
   end
 
   def edit
   end
 
   def create
-
-    @Attendance = Attendance.create(Attendance_params)
+    @class_id = session[:class_id]
+    @student_id = session[:student_id]
+    @attendence = Attendence.new(class_id: @class_id, student_id: @student_id)
 
     respond_to do |format|
-      if @Attendance.save
-        format.html { redirect_to @Attendance, notice: 'Attendance was successfully created.' }
-        format.json { render :show, status: :created, location: @Attendance }
+      if @attendence.save
+        format.html { redirect_to @attendence, notice: 'attendence was successfully created.' }
+        format.json { render :show, status: :created, location: @attendence }
       else
         format.html { render :new }
-        format.json { render json: @Attendance.errors, status: :unprocessable_entity }
+        format.json { render json: @attendence.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if @Attendance.update(Attendance_params)
-        format.html { redirect_to @Attendance, notice: 'Attendance was successfully updated.' }
-        format.json { render :show, status: :ok, location: @Attendance }
+      if @attendence.update(attendence_params)
+        format.html { redirect_to @attendence, notice: 'attendence was successfully updated.' }
+        format.json { render :show, status: :ok, location: @attendence }
       else
         format.html { render :edit }
-        format.json { render json: @Attendance.errors, status: :unprocessable_entity }
+        format.json { render json: @attendence.errors, status: :unprocessable_entity }
       end
     end
   end
-   binding.pry
 
   def destroy
-    @Attendance.destroy
+    @attendence.destroy
     respond_to do |format|
-      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
+      format.html { redirect_to attendences_url, notice: 'attendence was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-    def set_Attendance
-      @Attendance = Attendance.find(params[:id])
+    def set_attendence
+      @attendence = Attendence.find(params[:id])
     end
 
 
-    def Attendance_params
-      params[:class_id, :student_id, :present, :late, :date, :time]
+    def attendence_params
+      params[:class_id, :student_id]
     end
+
 end

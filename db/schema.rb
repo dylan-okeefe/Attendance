@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20151027185731) do
+
 
   create_table "admins", force: :cascade do |t|
     t.integer  "instructor_id"
@@ -37,6 +39,14 @@ ActiveRecord::Schema.define(version: 20151027185731) do
     t.integer  "student_id"
     t.boolean  "present"
     t.boolean  "late"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "course_locations", force: :cascade do |t|
+    t.integer  "course_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
