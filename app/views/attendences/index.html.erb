@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h2 class="navbar-fixed-top">//Attendr</h2>
-  <nav class="navbar navbar-inverse">
+<!-- <h2 class="navbar-fixed-top">//Attendr</h2> -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid" id="button">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Student</a>
+            <a class="navbar-brand" href="#"><%= current_user.first_name %></a>
             <div id = 'list' class="hide">
               <ul id = 'list-ul'>
                 <li>Records</li>
@@ -30,16 +30,29 @@
 
 </head>
 <body>
- <%= render 'form' %>
 
-<div id="pieChart"></div>
-<!-- <form>
-  date <input type='text' name='date'><%= Time.now.strftime('%m/%d/%y') %></input>
-  time <input type='text' name='time'><%= Time.now.strftime('%I:%M %p') %></input>
-</form>  -->
-<!-- if the time now is after 9:15 am your late if its before you're present.
-rails form. If student press submit with above comparison logic then do this thing.
- -->
+<% provide(:title, current_user.first_name) %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1 id='gravatar'>
+        <%= gravatar_for current_user %>
+        </h1>
+      </section>
+    </aside>
+  </div> 
+
+<div id="pieChart"></div> 
+
+<div class="container">
+    
+  <ul class="social">
+
+    <li class="github"><a href="#" class="entypo-github"></a></li>
+    <li class="linkedin"><a href="#" class="entypo-linkedin"></a></li>
+
+  </ul>
+</div>
 
 
 </body>

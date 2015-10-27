@@ -1,8 +1,0 @@
-<%= image_tag @student.image.url(:medium) %>
-
-<%= form_for @student, html: { multipart: true } do |f| %>
-  <div class="field">
-    <%= f.label :image%>
-    <%= f.file_field :image%>
-  </div>
-<% end %>
