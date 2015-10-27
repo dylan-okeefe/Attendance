@@ -15,7 +15,10 @@ class AttendencesController < ApplicationController
   end
 
   def create
-    @attendence = Attendence.new(attendence_params)
+    # binding.pry
+    @class_id = session[:class_id]
+    @student_id = session[:student_id]
+    @attendence = Attendence.new(class_id: @class_id, student_id: @student_id)
 
     respond_to do |format|
       if @attendence.save
@@ -56,7 +59,7 @@ class AttendencesController < ApplicationController
 
 
     def attendence_params
-      params[:first_name, :last_name]
+      params[:class_id, :student_id]
     end
 
 end
