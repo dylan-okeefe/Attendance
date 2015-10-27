@@ -15,7 +15,7 @@ def index
   end
 
   def create
-    #binding.pry
+  
     @course = Course.create(course_params)
 
     respond_to do |format|
