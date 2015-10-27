@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027183336) do
+ActiveRecord::Schema.define(version: 20151027185731) do
 
   create_table "admins", force: :cascade do |t|
     t.integer  "instructor_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20151027183336) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "attendances", force: :cascade do |t|
-    t.integer  "class_id"
+    t.integer  "course_id"
     t.integer  "student_id"
     t.boolean  "present"
     t.boolean  "late"

@@ -1,2 +1,2 @@
-module AttendencesHelper
+module attendancesHelper
 end

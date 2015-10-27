@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe AttendencesController, type: :controller do
+RSpec.describe attendancesController, type: :controller do
 
 end

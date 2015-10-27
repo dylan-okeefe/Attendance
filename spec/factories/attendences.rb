@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :attendence do
+  factory :Attendance do
     class_id 1
 student_id 1
 date "2015-10-20"

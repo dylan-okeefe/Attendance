@@ -1,4 +1,4 @@
-class RenameCreateAttendencesToCreateAttendances < ActiveRecord::Migration
+class RenameCreateattendancesToCreateAttendances < ActiveRecord::Migration
   def change
   	rename_table :attendences, :attendances 
   end

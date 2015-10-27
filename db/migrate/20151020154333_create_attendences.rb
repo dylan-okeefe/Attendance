@@ -1,6 +1,6 @@
-class CreateAttendences < ActiveRecord::Migration
+class Createattendances < ActiveRecord::Migration
   def change
-    create_table :attendences do |t|
+    create_table :attendances do |t|
       t.integer :class_id
       t.integer :student_id
       t.boolean :present 
