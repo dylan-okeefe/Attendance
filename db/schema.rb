@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20151026181408) do
 
   create_table "course_locations", force: :cascade do |t|
     t.integer  "course_id"
-    t.decimal  "lat"
-    t.decimal  "lng"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

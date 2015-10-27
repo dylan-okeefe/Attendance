@@ -29,6 +29,8 @@
 <body>
   <div id="centered">
     <button class="btn btn-primary btn-lg outline">
+    <%- unless @lat_lng %>
+    <%- end %>
       <h1>Get To Class</h1>
     </button>
       <form id="form" class="hide">

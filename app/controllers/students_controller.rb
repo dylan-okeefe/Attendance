@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
+
   def index
+    @lat_lng = cookies[:lat_lng].split("|")
     binding.pry
     @students = Student.all
   end
