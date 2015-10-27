@@ -5,10 +5,16 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid" id="button">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#"><%= current_user.first_name %></a>
+            <a class="navbar-brand" href="#">
+            <%if user_signed_in?%>
+            <%= current_user.first_name %>
+            <%else%>
+                Student
+            <%end%>
+            </a>
             <div id = 'list' class="hide">
               <ul id = 'list-ul'>
-                <li>Records</li>
+                <li>Attendance</li>
                 <li>Courses</li>
                 <li>Learn</li>
               </ul>
@@ -30,8 +36,9 @@
 
 </head>
 <body>
-
+<%if user_signed_in? %>
 <% provide(:title, current_user.first_name) %>
+<%end%>
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">

@@ -1,4 +1,4 @@
-  class AttendencesController < ApplicationController
+class AttendencesController < ApplicationController
   
   def index
     @attendences = Attendence.all
@@ -25,6 +25,13 @@
     render json: attendence_hash.to_json
   end
 
+  def index
+    @attendences = Attendence.all
+  end
+
+  def show
+  end
+
   def new
     @attendence = Attendence.new
   end
@@ -34,6 +41,10 @@
 
   def create
     @attendence = Attendence.create(attendence_params)
+  
+    @class_id = session[:class_id]
+    @student_id = session[:student_id]
+    @attendence = Attendence.new(class_id: @class_id, student_id: @student_id)
 
     respond_to do |format|
       if @attendence.save

@@ -31,27 +31,7 @@
 </head>
 <body>
 
-
-  <div id="centered">
-    <button type="button" class="btn btn-primary btn-lg outline" id="button" onclick="attend();">
-      <h1>Check In</h1>
-    </button> 
-  </div>
-  
-  <script>
-    // $('#centered button').click(function(){
-    //   alert('omrika');
-    // });
-
-  function attend(){
-    var form = document.createElement('form');
-    // form.setAttribute('method', 'post');
-    form.setAttribute('action', 'attendences');
-    form.style.display = 'hidden';
-    document.body.appendChild(form)
-    form.submit();
-  }
-  </script>
+    <%= button_to "Get To Class", {controller: "attendences", action: "create"}, form_class: "btn btn-primary btn-lg outline", disabled: !@clickable %>
   
 </body>
 </html>

@@ -27,29 +27,22 @@ function navbar_dropdown(){
 
 }
 
+// this grabs the users geolocation on the loading of the page
+// i hope
+function getGeoLocation() {
+  navigator.geolocation.getCurrentPosition(setGeoCookie);
+}
 
-//at this point this form is being shown after button is being clicked
-//i actually want the form to not show, however still be generated in the backend, autofilled
-//the 'student' should not see the form, they should just submit their attendance and be directed
-//to their page. OR once the button is clicked it updates the pie chart and that view is rendered.
-// function form(){
-//     var button = document.getElementsByClassName('btn')[0];
-//         form = document.getElementById('form');
-//         submit = document.getElementById('submit');
-
-//     button.addEventListener('click', function(){
-//         form.className = '';
-//         button.className = 'hide';
-//     });
-
-//     submit.addEventListener('click', function(){
-//         //route to a diff page when submit button is clicked.
-//     });
-// }
+function setGeoCookie(position) {
+  var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+  document.cookie = "lat_lng=" + escape(cookie_val);
+}
 
 document.onreadystatechange = function() {
     if (document.readyState == 'complete') {
         navbar_dropdown();
-
+        form();
+        getGeoLocation();
     }
 };
+
