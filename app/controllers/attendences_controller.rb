@@ -57,6 +57,7 @@
       end
     end
   end
+   binding.pry
 
   def destroy
     @attendence.destroy
