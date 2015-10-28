@@ -5,6 +5,27 @@ class AttendancesController < ApplicationController
   end
 
   def show
+    @attendances = attendance.select(current_user.student_id)
+    present = @attendances.where(:present=>true).count();
+    late = @attendances.where(:late=>true).count();
+    attendance_hash = {
+      "data": {
+        "content": [
+          {
+            "label": "Present",
+            "value": present
+          },
+          {
+            "label": "Lates",
+            "value": late
+          }
+        ]
+      } 
+    }
+    render json: attendance_hash.to_json
+  end
+
+  def show
   end
 
   def new
@@ -15,12 +36,10 @@ class AttendancesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @course_id = session[:course_id]
     @student_id = session[:student_id]
-    # binding.pry
+    
     @attendance = Attendance.new(course_id: @course_id, student_id: @student_id)
-
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to @attendance, notice: 'attendance was successfully created.' }
@@ -47,7 +66,9 @@ class AttendancesController < ApplicationController
   def destroy
     @attendance.destroy
     respond_to do |format|
+
       format.html { redirect_to Attendances_url, notice: 'attendance was successfully destroyed.' }
+      format.html { redirect_to attendances_url, notice: 'attendance was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -60,7 +81,6 @@ class AttendancesController < ApplicationController
 
 
     def attendance_params
-      params.require(:attendance).permit[:course_id, :student_id]
+      params.require(:attendance).permit[:course_id, :student_id, :present, :late]
     end
-
 end

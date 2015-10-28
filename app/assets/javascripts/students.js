@@ -27,25 +27,6 @@ function navbar_dropdown(){
 
 }
 
-//at this point this form is being shown after button is being clicked
-//i actually want the form to not show, however still be generated in the backend, autofilled
-//the 'student' should not see the form, they should just submit their attendance and be directed
-//to their page.
-function form(){
-    var button = document.getElementsByClassName('btn')[0];
-        form = document.getElementById('form');
-        submit = document.getElementById('submit');
-
-    button.addEventListener('click', function(){
-        form.className = '';
-        button.className = 'hide';
-    });
-
-    submit.addEventListener('click', function(){
-        //route to a diff page when submit button is clicked.
-    });
-}
-
 // this grabs the users geolocation on the loading of the page
 // i hope
 function getGeoLocation() {
@@ -59,9 +40,8 @@ function setGeoCookie(position) {
 
 document.onreadystatechange = function() {
     if (document.readyState == 'complete') {
-        navbar_dropdown();
-        form();
         getGeoLocation();
+        navbar_dropdown();
     }
 };
 

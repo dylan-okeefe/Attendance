@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
-  resources :course_locations
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+
   resources :instructor_courses
 
   resources :notes
 
   resources :attendances
 
+  resources :students
+
   resources :instructors
 
   resources :courses
-
-  resources :students
 
   root 'static#home'
 
