@@ -33,6 +33,11 @@
 
 
 <body>
+  
+  <% provide(:title, current_user.first_name) %>
+  <h1>
+  <%= gravatar_for current_user %>
+  </h1>
     <div class="container">
       <div class="centered">
         <div class="dropdown">
