@@ -1,17 +1,18 @@
 class StudentsController < ApplicationController
 
   def index
-
-    @lat_lng = cookies[:lat_lng].split("|")
-    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
-    if @classroom.distance < 0.2
-      @clickable = true
-      @student = Student.find_by(current_user.student_id)
-    else 
-      @clickable = false
+    if current_admin.nil?
+      @lat_lng = cookies[:lat_lng].split("|")
+      @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
+      if @classroom.distance < 0.2
+        @clickable = true
+        @student = Student.find_by(current_user.student_id)
+      else 
+        @clickable = false
+      end
+      session[:course_id] = @classroom.id
+      session[:student_id] = @student.id
     end
-    session[:course_id] = @classroom.id
-    session[:student_id] = @student.id
   end
 
   def show
