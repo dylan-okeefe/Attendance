@@ -11,7 +11,8 @@ Student.create([{first_name: "sara", last_name: "folkes"}])
 Student.create([{first_name: "ika", last_name: "folkes"}])
 Student.create([{first_name: "rika", last_name: "folkes"}])
 
-attendance.create([{class_id: 1, student_id: 1, present: true, late: true}])
-attendance.create([{class_id: 1, student_id: 1, present: false, late: true}])
-attendance.create([{class_id: 1, student_id: 1, present: true, late: false}])
-attendance.create([{class_id: 1, student_id: 1, present: false, late: true}])
+Attendance.create([{class_id: 1, student_id: 1, present: true, late: true}])
+Attendance.create([{class_id: 1, student_id: 1, present: false, late: true}])
+Attendance.create([{class_id: 1, student_id: 1, present: true, late: false}])
+Attendance.create([{class_id: 1, student_id: 1, present: false, late: true}])
+

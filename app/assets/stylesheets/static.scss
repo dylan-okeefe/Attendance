@@ -6,8 +6,17 @@
     min-width: 100%;
 }
 
-#about {
+#info {
 	padding-top: 35px;
+}
+
+#about {
+	background-color: #e9e9e9;
+	text-align: center;
+}
+
+.quadrant {
+	padding-bottom: 10px;
 }
 
 .glyphicon {
@@ -20,3 +29,58 @@
     float: left;
     z-index: 99999;
     }
+
+.cropcircle{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background: #eee no-repeat center;
+    background-size: cover;
+    border-style: solid;
+    border-color: #7FF6BF;
+    margin-left: auto;
+	margin-right: auto;
+	float: none !important;
+}
+
+#image1{
+    background-image: url(jenna.jpg);
+}
+
+#image2{
+	background-image: url();
+}
+
+#image3 {
+	background-image: url();
+}
+
+#image4 {
+	background-image: url();
+}
+
+.cropcircle:hover {
+	width:300px; 
+	height:300px; 
+	
+}
+
+.name {
+	text-align: center;
+	color: #3F3B39 !important;
+}
+
+.icon {
+	text-align: center;
+}
+
+.icon > img {
+	height: 30px;
+	width: 30px;
+}
+
+.icon > img:hover {
+	opacity: .5;
+}
+
+    

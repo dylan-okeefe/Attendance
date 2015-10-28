@@ -1,14 +1,9 @@
 class StudentsController < ApplicationController
 
   def index
-    # binding.pry
+
     @lat_lng = cookies[:lat_lng].split("|")
-<<<<<<< HEAD
     @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
-=======
-    @classroom = CourseLocation.near([@lat_lng[0], @lat_lng[1]]).first
-    binding.pry
->>>>>>> studentfix
     if @classroom.distance < 0.2
       @clickable = true
       @student = Student.find_by(current_user.student_id)

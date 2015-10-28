@@ -23,10 +23,7 @@
 
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
-body {
-  
-  padding-bottom: 30px;
-}
+
 
 .theme-dropdown .dropdown-menu {
   position: static;
@@ -36,4 +33,52 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+}
+
+.navbar {
+	opacity: 0.7;
+	background-color: #686868;
+}
+
+.btn-xlg {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.navbar-nav > li > a {
+color: white !important;
+font-size: 16px !important;
+	
+}
+
+.footer {
+	padding-bottom: 0px !important;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #bdbdbd;
+}
+
+.footer > p {
+	margin-bottom: 0 !important;
+}
+
+.footer > p > a {
+	margin: 0 auto;
+	color: #ffffff;
+	font-size: 32px;
+	text-decoration: none;
+}
+
+.footer > p > a:hover {
+	color: #686868;
+}
+
+.footer > p > a > img {
+	height: 100px;
+	width: 100px;
 }

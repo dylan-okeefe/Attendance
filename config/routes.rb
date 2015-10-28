@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :instructors
 
   resources :courses
-
+  
   root 'static#home'
 
 
