@@ -16,3 +16,4 @@ Attendance.create([{course_id: 1, student_id: 1, present: false, late: true}])
 Attendance.create([{course_id: 1, student_id: 1, present: true, late: false}])
 Attendance.create([{course_id: 1, student_id: 1, present: false, late: true}])
 
+Course.create([{name: "brooklyn fellowship", latitude: 40.6981454, longitude: -73.9866087}])
