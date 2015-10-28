@@ -15,6 +15,6 @@
 //= require bootstrap
 //= require d3.min.js
 //= require d3pie.min.js
+//= require students.js
 //= require student_graph.js
 //= require_tree ../../../vendor/assets/javascripts/.
-//= require students
