@@ -1,4 +1,4 @@
-class AdminsRegistrationController < Devise::RegistrationsController
+class Admin::RegistrationsController < Devise::RegistrationsController
 
   def create
     @instructor = Instructor.new(:first_name => sign_up_params[:first_name],:last_name => sign_up_params[:last_name])
