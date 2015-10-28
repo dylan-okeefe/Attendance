@@ -40,9 +40,8 @@ function setGeoCookie(position) {
 
 document.onreadystatechange = function() {
     if (document.readyState == 'complete') {
-        navbar_dropdown();
-        form();
         getGeoLocation();
+        navbar_dropdown();
     }
 };
 

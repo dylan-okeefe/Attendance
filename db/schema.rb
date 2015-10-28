@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20151026181408) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "attendences", force: :cascade do |t|
+  create_table "attendances", force: :cascade do |t|
     t.integer  "class_id"
     t.integer  "student_id"
     t.boolean  "present"
