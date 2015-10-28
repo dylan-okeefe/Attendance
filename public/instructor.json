@@ -1,0 +1,50 @@
+[
+ {
+ "name": "Course",
+ "parent": "null",
+ "children": [
+   {
+     "name": "IN",
+     "parent": "Course",
+     "children": [
+       {
+         "name": "student IN",
+         "parent": "IN"
+       },
+       {
+         "name": "Another student name that is IN for that day",
+         "parent": "IN"
+       }
+     ]
+   },
+   {
+     "name": "LATE",
+     "parent": "Course",
+     "children": [
+       {
+         "name": "student LATE",
+         "parent": "LATE"
+       },
+       {
+         "name": "Another student name that is LATE for that day",
+         "parent": "LATE"
+       }
+     ]
+   },
+   {
+     "name": "OUT",
+     "parent": "Course",
+     "children": [
+       {
+         "name": "student OUT",
+         "parent": "OUT"
+       },
+       {
+         "name": "Another student name that is OUT for that day",
+         "parent": "OUT"
+       }
+     ]
+   }
+ ]
+}
+]
