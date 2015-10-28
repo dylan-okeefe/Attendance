@@ -28,7 +28,7 @@
 </head>
 <body>
   <div id="centered">
-    <%= button_to "Get To Class", {controller: "attendences", action: "create"}, form_class: "btn btn-primary btn-lg outline", disabled: !@clickable %>
+    <%= button_to "Get To Class", attendances_path, form_class: "btn btn-primary btn-lg outline", disabled: !@clickable %>
     
 <!--     <button class="btn btn-primary btn-lg outline" <% if !@clickable %><%= "disabled" %><% end %>>
       <h1>Get To Class</h1>

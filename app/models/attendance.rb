@@ -1,2 +1,2 @@
-class Attendence < ActiveRecord::Base
+class Attendance < ActiveRecord::Base
 end

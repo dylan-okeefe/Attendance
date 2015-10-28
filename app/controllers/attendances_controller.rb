@@ -1,14 +1,14 @@
-class AttendencesController < ApplicationController
+class AttendancesController < ApplicationController
 
   def index
-    @attendences = Attendence.all
+    @attendances = Attendance.all
   end
 
   def show
   end
 
   def new
-    @attendence = Attendence.new
+    @attendance = Attendance.new
   end
 
   def edit
@@ -16,50 +16,51 @@ class AttendencesController < ApplicationController
 
   def create
     # binding.pry
-    @class_id = session[:class_id]
+    @course_id = session[:course_id]
     @student_id = session[:student_id]
-    @attendence = Attendence.new(class_id: @class_id, student_id: @student_id)
+    # binding.pry
+    @attendance = Attendance.new(course_id: @course_id, student_id: @student_id)
 
     respond_to do |format|
-      if @attendence.save
-        format.html { redirect_to @attendence, notice: 'attendence was successfully created.' }
-        format.json { render :show, status: :created, location: @attendence }
+      if @attendance.save
+        format.html { redirect_to @attendance, notice: 'attendance was successfully created.' }
+        format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new }
-        format.json { render json: @attendence.errors, status: :unprocessable_entity }
+        format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if @attendence.update(attendence_params)
-        format.html { redirect_to @attendence, notice: 'attendence was successfully updated.' }
-        format.json { render :show, status: :ok, location: @attendence }
+      if @attendance.update(attendance_params)
+        format.html { redirect_to @attendance, notice: 'attendance was successfully updated.' }
+        format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit }
-        format.json { render json: @attendence.errors, status: :unprocessable_entity }
+        format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @attendence.destroy
+    @attendance.destroy
     respond_to do |format|
-      format.html { redirect_to attendences_url, notice: 'attendence was successfully destroyed.' }
+      format.html { redirect_to Attendances_url, notice: 'attendance was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-    def set_attendence
-      @attendence = Attendence.find(params[:id])
+    def set_attendance
+      @attendance = attendance.find(params[:id])
     end
 
 
-    def attendence_params
-      params[:class_id, :student_id]
+    def attendance_params
+      params.require(:attendance).permit[:course_id, :student_id]
     end
 
 end

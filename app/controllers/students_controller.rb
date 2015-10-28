@@ -1,15 +1,16 @@
 class StudentsController < ApplicationController
 
   def index
+    # binding.pry
     @lat_lng = cookies[:lat_lng].split("|")
-    @classroom = CourseLocation.near([@lat_lng[0], @lat_lng[1]]).first
+    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
     if @classroom.distance < 0.2
       @clickable = true
       @student = Student.find_by(current_user.student_id)
     else 
       @clickable = false
     end
-    session[:class_id] = @classroom.course_id
+    session[:course_id] = @classroom.id
     session[:student_id] = @student.id
   end
 
@@ -65,6 +66,6 @@ class StudentsController < ApplicationController
 
 
     def student_params
-      params[:first_name, :last_name]
+      params.require(:student).permit[:first_name, :last_name]
     end
 end

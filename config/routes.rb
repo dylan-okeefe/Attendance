@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :notes
 
-  resources :attendences
+  resources :attendances
 
   resources :instructors
 
