@@ -5,17 +5,17 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid" id="button">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Student</a>
+            <a class="navbar-brand" href="#">Instructor</a>
             <div id = 'list' class="hide">
-              <ul id = 'list-ul'>
+               <ul id = 'list-ul'>
                 <li>Records</li>
                 <li>Courses</li>
                 <li>Learn</li>
               </ul>
             </div>
-          </div>
-        <div>
-          <ul class="nav navbar-nav">
+           </div>
+         <div>
+         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <% if !user_signed_in? %>  
               <li><%= link_to("Log In", new_user_session_path) %></li>
@@ -23,24 +23,19 @@
             <%else%>
               <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
             <%end%>
-          </ul>
-        </div> 
-    </div>
-  </nav>
+              </ul>
+            </div> 
+          </div>
+        </nav>
+    </head>
 
-</head>
-<body>
- <%= render 'form' %>
-
-<div id="pieChart"></div>
-<!-- <form>
-  date <input type='text' name='date'><%= Time.now.strftime('%m/%d/%y') %></input>
-  time <input type='text' name='time'><%= Time.now.strftime('%I:%M %p') %></input>
-</form>  -->
-<!-- if the time now is after 9:15 am your late if its before you're present.
-rails form. If student press submit with above comparison logic then do this thing.
- -->
+  <body>
+       <h1>Course Name</h1>
 
 
-</body>
-</html>
+
+
+
+
+  </body>
+ </html>

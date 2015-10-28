@@ -29,6 +29,7 @@ class AttendancesController < ApplicationController
   end
 
   def new
+
     @attendance = Attendance.new
   end
 
@@ -36,6 +37,7 @@ class AttendancesController < ApplicationController
   end
 
   def create
+
     @course_id = session[:course_id]
     @student_id = session[:student_id]
     
@@ -65,9 +67,8 @@ class AttendancesController < ApplicationController
 
   def destroy
     @attendance.destroy
+    
     respond_to do |format|
-
-      format.html { redirect_to Attendances_url, notice: 'attendance was successfully destroyed.' }
       format.html { redirect_to attendances_url, notice: 'attendance was successfully destroyed.' }
       format.json { head :no_content }
     end
