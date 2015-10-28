@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <h2 class="navbar-fixed-top">//Attendr</h2> -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid" id="button">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            <%if user_signed_in?%>
+            <%= current_user.first_name %>
+            <%else%>
+                Student
+            <%end%>
+            </a>
+            <div id = 'list' class="hide">
+              <ul id = 'list-ul'>
+                <li>Attendance</li>
+                <li>Courses</li>
+                <li>Learn</li>
+              </ul>
+            </div>
+          </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <% if !user_signed_in? %>  
+              <li><%= link_to("Log In", new_user_session_path) %></li>
+              <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+            <%else%>
+              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+            <%end%>
+          </ul>
+        </div> 
+    </div>
+  </nav>
+
+</head>
+<body>
+<%if user_signed_in? %>
+<% provide(:title, current_user.first_name) %>
+<%end%>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1 id='gravatar'>
+        <%= gravatar_for current_user %>
+        </h1>
+      </section>
+    </aside>
+  </div> 
+
+<div id="pieChart"></div> 
+
+<div class="container">
+    
+  <ul class="social">
+
+    <li class="github"><a href="#" class="entypo-github"></a></li>
+    <li class="linkedin"><a href="#" class="entypo-linkedin"></a></li>
+
+  </ul>
+</div>
+
+
+</body>
+</html>

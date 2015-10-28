@@ -17,9 +17,12 @@
         <div>
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><%= link_to("Log In", new_user_session_path) %></li>
-            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+            <%if !user_signed_in? %>  
+              <li><%= link_to("Log In", new_user_session_path) %></li>
+              <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+            <%else%>
+              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+            <%end%>
           </ul>
         </div> 
     </div>
@@ -30,9 +33,5 @@
   <div id="centered">
     <%= button_to "Get To Class", attendances_path, form_class: "btn btn-primary btn-lg outline", disabled: !@clickable %>
     
-<!--     <button class="btn btn-primary btn-lg outline" <% if !@clickable %><%= "disabled" %><% end %>>
-      <h1>Get To Class</h1>
-    </button> -->
-  </div>
 </body>
 </html>

@@ -3,7 +3,12 @@ class StudentsController < ApplicationController
   def index
     # binding.pry
     @lat_lng = cookies[:lat_lng].split("|")
+<<<<<<< HEAD
     @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
+=======
+    @classroom = CourseLocation.near([@lat_lng[0], @lat_lng[1]]).first
+    binding.pry
+>>>>>>> studentfix
     if @classroom.distance < 0.2
       @clickable = true
       @student = Student.find_by(current_user.student_id)
@@ -18,15 +23,14 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @student = student.new
+    @student = Student.new
   end
 
   def edit
   end
 
   def create
-    @student = student.new(student_params)
-
+    @student = Student.create(student_params)
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'student was successfully created.' }
@@ -66,6 +70,6 @@ class StudentsController < ApplicationController
 
 
     def student_params
-      params.require(:student).permit[:first_name, :last_name]
+      params.require(:student).permit(:first_name, :last_name, :image)
     end
 end
