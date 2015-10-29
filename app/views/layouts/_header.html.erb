@@ -1,3 +1,4 @@
+<% if !user_signed_in? %>
 <nav class="navbar navbar-default navbar-fixed-top">
   
     <div class="navbar-header">
@@ -18,3 +19,30 @@
         </ul>
     </div>
 </nav>
+
+<% else %>
+
+<h2 class="navbar-fixed-top">//Attendr</h2>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="button">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Instructor</a>
+            <div id = 'list' class="hide">
+               <ul id = 'list-ul'>
+                <li>Records</li>
+                <li>Courses</li>
+                <li>Learn</li>
+              </ul>
+            </div>
+           </div>
+         <div>
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+           
+              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+            
+          </ul>
+        </div> 
+    </div>
+  </nav>
+  <% end %>
