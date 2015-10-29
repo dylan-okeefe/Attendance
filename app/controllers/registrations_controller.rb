@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    @student = Student.new(:first_name => sign_up_params[:first_name],:last_name => sign_up_params[:last_name])
+    @student = Student.where(first_name: sign_up_params[:first_name], last_name: sign_up_params[:last_name]).first_or_initialize
     @student.save
     build_resource(sign_up_params, @student.id)
 
