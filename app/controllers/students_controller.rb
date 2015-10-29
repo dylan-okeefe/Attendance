@@ -4,14 +4,14 @@ class StudentsController < ApplicationController
     if current_admin.nil?
       @lat_lng = cookies[:lat_lng].split("|")
       @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
-      if @classroom.distance < 0.2
+      @student = Student.find_by id: current_user.student_id
+      if @classroom.distance < 0.2 && !(Attendance.where(["student_id = ?", current_user.student_id]).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
         @clickable = true
-        @student = Student.find_by(current_user.student_id)
+        session[:course_id] = @classroom.id
+        session[:student_id] = @student.id
       else 
         @clickable = false
       end
-      session[:course_id] = @classroom.id
-      session[:student_id] = @student.id
     end
   end
 
