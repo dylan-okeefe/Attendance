@@ -1,4 +1,3 @@
-var treeData = [
  {
  "name": "Course",
  "parent": "null",
@@ -47,4 +46,3 @@ var treeData = [
    }
  ]
 }
-]
