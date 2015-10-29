@@ -32,19 +32,17 @@ ActiveRecord::Schema.define(version: 20151023155917) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "attendances", force: :cascade do |t|
-    t.integer  "course_id"
+  create_table "attendences", force: :cascade do |t|
+    t.integer  "class_id"
     t.integer  "student_id"
-    t.boolean  "present"
-    t.boolean  "late"
+    t.date     "date"
+    t.time     "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
-    t.float    "latitude"
-    t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,15 +55,21 @@ ActiveRecord::Schema.define(version: 20151023155917) do
   end
 
   create_table "instructors", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "teacher_id"
+    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
