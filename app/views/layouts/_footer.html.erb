@@ -1,5 +1,13 @@
+<% if !user_signed_in? %>
 <footer class="footer">
 <div class="container">
 </div>
 <p class="text-center"><a href="//github.com/dylan-okeefe/Attendance"><img src="<%= asset_path( 'github.png' ) %>"> View On GitHub <span class="glyphicon glyphicon-share-alt"></span></a></p>
 </footer>
+<% else %>
+<footer class="footer2">
+<div class="container">
+</div>
+<p class="text-center"><a href="//github.com/dylan-okeefe/Attendance"><img src="<%= asset_path( 'github.png' ) %>"> View On GitHub <span class="glyphicon glyphicon-share-alt"></span></a></p>
+</footer>
+<% end %>
