@@ -1,17 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+<h2 class="navbar-fixed-top">//Attendr</h2>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="button">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Instructor</a>
+            <div id = 'list' class="hide">
+               <ul id = 'list-ul'>
+                <li>Records</li>
+                <li>Courses</li>
+                <li>Learn</li>
+              </ul>
+            </div>
+           </div>
+         <div>
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <% if !admin_signed_in? %>  
+              <li><%= link_to("Log In", new_user_session_path) %></li>
+              <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+            <%else%>
+              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+            <%end%>
+          </ul>
+        </div> 
+    </div>
+  </nav>
 
-
-          
-
-
-
-  
-  <% provide(:title, current_user.first_name) %>
+</head>
+  <% provide(:title, current_admin.first_name) %>
   <h1>
-  <%= gravatar_for current_user %>
+  <%= gravatar_for current_admin %>
   </h1>
-
-
 
     <div class="container">
       <div class="centered">
@@ -42,23 +64,4 @@
               </div>
             </div>
           </div> 
-
-        
-    <style>
-
-  .node circle {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 3px;
-  }
-
-  .node text { font: 12px sans-serif; }
-
-  .link {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 2px;
-  }
-  
-    </style>
 
