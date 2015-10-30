@@ -17,6 +17,7 @@
 //= require d3pie.min.js
 //= require students.js
 //= require student_graph.js
+//= require tree
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require students.js
 
