@@ -1,5 +1,5 @@
 $(document).ready(function() {
-// $.getJSON('/instructors/current_admin').success(function(data){
+// $.getJSON('/courses/current_admin').success(function(data){
 //     treeData = data;
 // });
 
@@ -13,18 +13,39 @@ var treeData = [
         "parent": "Courses",
         "children": [
           {
-            "name": "Son of A",
+            "name": "Son of A - IN",
+            "parent": "Level 2: A"
+          },
+
+          {
+            "name": "Daughter of A - LATE",
             "parent": "Level 2: A"
           },
           {
-            "name": "Daughter of A",
+            "name": "Daughter of A - OUT",
             "parent": "Level 2: A"
           }
         ]
       },
       {
         "name": "MH",
-        "parent": "Courses"
+        "parent": "Courses",
+        "children":[
+        {
+            "name": "Son of A - IN",
+            "parent": "Level 2: A"
+          },
+
+          {
+            "name": "Daughter of A - LATE",
+            "parent": "Level 2: A"
+          },
+
+          {
+            "name": "Daughter of A - OUT",
+            "parent": "Level 2: A"
+          }
+        ] 
       }
     ]
   }
