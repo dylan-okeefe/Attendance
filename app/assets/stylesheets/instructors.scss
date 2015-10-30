@@ -101,3 +101,23 @@ div.container div.centered button.btn.btn-primary.btn-lg.outline:first-child {
     background: #BBBBBB;
 }
 
+/** CSS for tree layout **/
+.node {
+    cursor: pointer;
+  }
+
+
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+  }
+
+  .node text { font: 12px sans-serif; }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+/** Css Tree layout end **/
