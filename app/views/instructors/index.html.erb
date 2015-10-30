@@ -18,7 +18,7 @@
          <div>
          <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <% if !user_signed_in? %>  
+            <% if !admin_signed_in? %>  
               <li><%= link_to("Log In", new_user_session_path) %></li>
               <li><%= link_to("Sign Up", new_user_registration_path) %></li>
             <%else%>
@@ -35,10 +35,11 @@
 
 <body>
   
-  <% provide(:title, current_user.first_name) %>
+  <% provide(:title, current_admin.first_name) %>
   <h1>
-  <%= gravatar_for current_user %>
+  <%= gravatar_for current_admin %>
   </h1>
+  <div class="chart">
     <div class="container">
       <div class="centered">
         <div class="dropdown">
