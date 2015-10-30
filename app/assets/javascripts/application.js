@@ -19,5 +19,4 @@
 //= require student_graph.js
 //= require tree
 //= require_tree ../../../vendor/assets/javascripts/.
-//= require students.js
-
+//= require_tree .
