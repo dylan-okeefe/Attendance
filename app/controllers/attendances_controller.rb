@@ -37,10 +37,12 @@ class AttendancesController < ApplicationController
   end
 
   def create
-
     @course_id = session[:course_id]
     @student_id = session[:student_id]
-    
+    if StudentCourse.where(student_id: @student_id, course_id: @course_id).empty?
+      @student_course = StudentCourse.new(student_id: @student_id, course_id: @course_id)
+      @student_course.save
+    end
     @attendance = Attendance.new(course_id: @course_id, student_id: @student_id)
     respond_to do |format|
       if @attendance.save
