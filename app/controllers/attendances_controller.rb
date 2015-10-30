@@ -5,7 +5,7 @@ class AttendancesController < ApplicationController
   end
 
   def show
-    @attendances = attendance.select(current_user.student_id)
+    @attendances = Attendance.select(current_user.student_id)
     present = @attendances.where(:present=>true).count();
     late = @attendances.where(:late=>true).count();
     attendance_hash = {
@@ -25,9 +25,6 @@ class AttendancesController < ApplicationController
     render json: attendance_hash.to_json
   end
 
-  def show
-  end
-
   def new
 
     @attendance = Attendance.new
@@ -39,14 +36,18 @@ class AttendancesController < ApplicationController
   def create
     @course_id = session[:course_id]
     @student_id = session[:student_id]
+    
     if StudentCourse.where(student_id: @student_id, course_id: @course_id).empty?
       @student_course = StudentCourse.new(student_id: @student_id, course_id: @course_id)
       @student_course.save
     end
+    #put logic for late. 
+    #right now the students controller checks for present (btwn 7 and 9:15)
+    #in here i need to check if 'created_at' is after 9 so late can be true.
     @attendance = Attendance.new(course_id: @course_id, student_id: @student_id)
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to @attendance, notice: 'attendance was successfully created.' }
+        format.html { redirect_to @attendance}
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new }

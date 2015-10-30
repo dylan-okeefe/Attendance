@@ -1,17 +1,34 @@
 class StudentsController < ApplicationController
-
+  
   def index
-    if current_admin.nil?
+    if user_signed_in?
       @lat_lng = cookies[:lat_lng].split("|")
       @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
       @student = Student.find_by id: current_user.student_id
-      if @classroom.distance < 0.2 && !(Attendance.where(["student_id = ?", current_user.student_id]).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
-        @clickable = true
+      t = Time.now
+      range = Range.new(
+          Time.local(t.year, t.month, t.day, 7),
+          Time.local(t.year, t.month, t.day, 9, 00)
+        )
+
+      late_range = Range.new(
+          Time.local(t.year, t.month, t.day, 9, 01),
+          Time.local(t.year, t.month, t.day, 9, 15)
+        )
+      if @classroom.distance < 0.2 && t == range
+      #   (Attendance.where(current_user.student_id).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
         session[:course_id] = @classroom.id
         session[:student_id] = @student.id
-      else 
-        @clickable = false
+        if @classroom.distance < 0.2 && t == late_range
+          @clickable = true
+        end
+        @clickable = true
       end
+          # binding.pry
+          #IN PROGRESS GUYS
+      
+
+
     end
   end
 
