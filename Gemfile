@@ -27,9 +27,11 @@ gem 'geocoder'
 gem 'geokit-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'cocoon'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'simple_form'
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,13 @@
+<%= simple_form_for @course do |f| %>
+  
+  <h3>Students</h3>
+  <div id='students'>
+<!--     <%= f.simple_fields_for :students do |student| %>
+      <%= render 'student_fields', :f => student %>
+    <% end %> -->
+    <div class='links'>
+      <%= link_to_add_association 'add student', f, :students %>
+    </div>
+  </div>
+    <%= f.button :submit, 'Save' %>
+<% end %>
