@@ -14,7 +14,12 @@ Rails.application.routes.draw do
 
   resources :instructors
 
-  resources :courses
+  resources :courses do
+    resources :students
+    member do
+      get 'manage'
+    end
+  end
   
   root 'static#home'
 
