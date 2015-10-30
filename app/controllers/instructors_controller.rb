@@ -26,7 +26,6 @@ class InstructorsController < ApplicationController
 
   def create
     @instructor = Instructor.new(instructor_params)
-
      respond_to do |format|
   	 	if @instructor.save
   	  	  format.html { redirect_to @instructor, notice: 'New instructor has been successfully created.' }
