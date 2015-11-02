@@ -19,14 +19,13 @@ class StudentsController < ApplicationController
       #   (Attendance.where(current_user.student_id).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
         session[:course_id] = @classroom.id
         session[:student_id] = @student.id
-        if @classroom.distance < 0.2 && t == late_range
-          @clickable = true
-        end
+        # if @classroom.distance < 0.2 && t == late_range
+        #   @clickable = true
+        # end
         @clickable = true
       end
           # binding.pry
           #IN PROGRESS GUYS
-      
     end
   end
 
