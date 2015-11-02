@@ -44,7 +44,7 @@ class AttendancesController < ApplicationController
     #put logic for late. 
     #right now the students controller checks for present (btwn 7 and 9:15)
     #in here i need to check if 'created_at' is after 9 so late can be true.
-    @attendance = Attendance.new(course_id: @course_id, student_id: @student_id)
+    @attendance = Attendance.new(course_id: @course_id, student_id: @student_id, late: session[:late], present: true)
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to @attendance}
