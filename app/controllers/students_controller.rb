@@ -18,19 +18,6 @@ class StudentsController < ApplicationController
     else
       redirect_to root_path
     end
-    # if user_signed_in?
-    #   if @classroom.distance < 0.2 && t == range
-    #   #   (Attendance.where(current_user.student_id).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
-    #     session[:course_id] = @classroom.id
-    #     session[:student_id] = @student.id
-    #     # if @classroom.distance < 0.2 && t == late_range
-    #     #   @clickable = true
-    #     # end
-    #     @clickable = true
-    #   end
-    #       # binding.pry
-    #       #IN PROGRESS GUYS
-    # end
   end
 
   def is_late?
