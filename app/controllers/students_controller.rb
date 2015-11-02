@@ -1,31 +1,76 @@
 class StudentsController < ApplicationController
   
   def index
-    if user_signed_in?
-      @lat_lng = cookies[:lat_lng].split("|")
-      @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
-      @student = Student.find_by id: current_user.student_id
-      t = Time.now
-      range = Range.new(
-          Time.local(t.year, t.month, t.day, 7),
-          Time.local(t.year, t.month, t.day, 9, 00)
-        )
-
-      late_range = Range.new(
-          Time.local(t.year, t.month, t.day, 9, 01),
-          Time.local(t.year, t.month, t.day, 9, 15)
-        )
-      if @classroom.distance < 0.2 && t == range
-      #   (Attendance.where(current_user.student_id).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
+    grab_location
+    case user_or_admin?
+    when nil
+      redirect_to root_path
+    when "user"
+      current_student
+      if close_to_class? && log_in_time?
+        @clickable = true
         session[:course_id] = @classroom.id
         session[:student_id] = @student.id
-        # if @classroom.distance < 0.2 && t == late_range
-        #   @clickable = true
-        # end
-        @clickable = true
+        is_late? ? session[:late] = false : session[:late] = true
       end
-          # binding.pry
-          #IN PROGRESS GUYS
+    when "admin"
+
+    else
+      redirect_to root_path
+    end
+    # if user_signed_in?
+    #   if @classroom.distance < 0.2 && t == range
+    #   #   (Attendance.where(current_user.student_id).last.created_at.strftime("%m%d%Y") == Time.now.strftime("%m%d%Y"))
+    #     session[:course_id] = @classroom.id
+    #     session[:student_id] = @student.id
+    #     # if @classroom.distance < 0.2 && t == late_range
+    #     #   @clickable = true
+    #     # end
+    #     @clickable = true
+    #   end
+    #       # binding.pry
+    #       #IN PROGRESS GUYS
+    # end
+  end
+
+  def is_late?
+    t = Time.now
+    late_range = Range.new(
+              Time.local(t.year, t.month, t.day, 9, 01),
+              Time.local(t.year, t.month, t.day, 9, 15)
+              )
+    t == late_range
+  end
+
+  def log_in_time?
+    t = Time.now
+    range = Range.new(
+          Time.local(t.year, t.month, t.day, 7),
+          Time.local(t.year, t.month, t.day, 9, 15)
+         )
+    t == range
+  end
+
+  def close_to_class?
+    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
+    @classroom.distance < 0.2
+  end
+
+  def grab_location
+    @lat_lng = cookies[:lat_lng].split("|")
+  end
+
+  def current_student 
+    @student = Student.find_by id: current_user.student_id
+  end
+
+  def user_or_admin?
+    if user_signed_in?
+      "user"
+    elsif admin_signed_in?
+      "admin"
+    else
+      nil
     end
   end
 
