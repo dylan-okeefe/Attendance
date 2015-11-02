@@ -27,8 +27,6 @@ class StudentsController < ApplicationController
           # binding.pry
           #IN PROGRESS GUYS
       
-
-
     end
   end
 

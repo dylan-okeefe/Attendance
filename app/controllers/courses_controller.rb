@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-
   def index
     @courses = Course.all
   end
@@ -14,6 +13,12 @@ class CoursesController < ApplicationController
   end
 
   def edit
+  end
+
+  def manage
+    @course = Course.find(params[:id])
+    @student = Student.new
+    @student_course = StudentCourse.new
   end
 
   def create
@@ -31,6 +36,7 @@ class CoursesController < ApplicationController
   end
 
   def update
+    @course = Course.find(params[:id])
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'course was successfully updated.' }
@@ -53,11 +59,11 @@ class CoursesController < ApplicationController
   private
 
     def set_course
-      @course = Course.find(params[:name])
+      @course = Course.find(params[:id])
     end
 
 
     def course_params
-      params.require(:course).permit(:name)
+      params.require(:course).permit(:name, students_attributes: [:id, :first_name, :last_name, :_destroy])
     end
 end
