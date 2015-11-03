@@ -43,8 +43,15 @@
           <!-- dropdown menu -->
               <ul class="dropdown-menu">
                   <li><%#= link_to course.name, course_path(course) %></li>
-                    <li><a href="/courses/">Web Dev</a></li>
-                    <li><a href="/courses/">iOS Dev</a></li>
+                    <li>
+                      <a href="/courses/">
+                        <% Course.all.each do |course|%>
+                          <li>
+                            <%= course.name%>
+                          </li>
+                        <%end%>
+                      </a>
+                    </li>
                 </ul>
               </div>
       
@@ -55,11 +62,16 @@
 
           <!-- dropdown menu -->
             <ul class="dropdown-menu">
-                <li><a href="/students/">Beyonce</a></li>
-                  <li><a href="/students/">Rihanna</a></li>
-                    <li><a href="/students/">Lana</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div> 
+                <li><a href="/students/">
+                    <% Student.all.each do |student|%>
+                      <li>
+                        <%= student.first_name%>
+                      </l1>
+                    <%end%>
+                  </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div> 
 
