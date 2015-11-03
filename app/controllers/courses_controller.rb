@@ -5,7 +5,34 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @admin = Admin.find_by(:id => @course.admin_id)
+    # @admin = Admin.find_by(:id => @course.instructor)
+    week = Range.new(
+                Time.local(2015, 10, 25),
+                Time.local(2015, 10, 31)
+                )
+    @attendances = Attendance.where(created_at: week, course_id: @course.id)
+    @students = []
+    @monday = []
+    @tuesday = []
+    @wednesday = []
+    @thrusday = []
+    @friday = []
+    @attendances.each do |attendance|
+      @students << attendance.student if !@students.include?(attendance.student)
+      if attendance.created_at.to_date.monday?
+        @monday << attendance
+      elsif attendance.created_at.to_date.tuesday?
+        @tuesday << attendance
+      elsif attendance.created_at.to_date.wednesday?
+        @wednesday << attendance
+      elsif attendance.created_at.to_date.thursday?
+        @thursday << attendance
+      elsif attendance.created_at.to_date.friday?
+        @friday << attendance
+      end
+    end
+      # binding.pry
+
   end
 
   def new

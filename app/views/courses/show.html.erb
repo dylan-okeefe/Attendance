@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+  </tr>
+    <% @students.each do |student| %>
+  <tr>
+    <td><%= student.first_name %> <%= student.last_name %></td>
+    <td><%= @friday.select {|attendance| attendance.student_id == student.id }.first.created_at.strftime("%l:%M %p") %></td>
+    <td>9</td>
+    <td>9</td>
+    <td><%= @thursday.select {|attendance| attendance.student_id == student.id }.first.created_at.strftime("%l:%M %p") %></td>
+    <td><%= @friday.select {|attendance| attendance.student_id == student.id }.first.created_at.strftime("%l:%M %p") %></td>
+  </tr>
+    <% end %>
+
+
+
+
+
+
+
+
+
+</table>
