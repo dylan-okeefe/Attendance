@@ -3,7 +3,7 @@
 <%end%>
 
 <%if user_signed_in?%>
-  <div id="centered">
-    <%= button_to "Get To Class", {controller: "attendances", action: "create"}, form_class: "btn btn-primary btn-lg outline", disabled: !@clickable %>   
-  </div>
+ <div id="centered">
+    <%= link_to "Get to Class", {controller: "attendances", action: "create"},disabled: !@clickable %>   
+  </div> 
 <%end%>
