@@ -5,13 +5,12 @@ class InstructorsController < ApplicationController
 
   def index
   	@instructors = Instructor.all
-   # render :json => @@data
   end
    
   def show
      @instructor = Instructor.find(params[:id])
  #create hash for specific instructor here
- #instructor needs to have an association to the attendance 
+ #instructor needs to have an association to the attendance(there is an association)
 
      render:json => @@data
    end

@@ -6,7 +6,6 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @admin = Admin.find_by(:id => @course.admin_id)
   end
 
   def new

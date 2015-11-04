@@ -13,37 +13,37 @@ var treeData = [
         "parent": "Courses",
         "children": [
           {
-            "name": "Son of A - IN",
+            "name": "Son of A - Present Students",
             "parent": "Level 2: A"
           },
 
           {
-            "name": "Daughter of A - LATE",
+            "name": "Daughter of A - Late Students",
             "parent": "Level 2: A"
           },
           {
-            "name": "Daughter of A - OUT",
+            "name": "Daughter of A - Absent Students",
             "parent": "Level 2: A"
           }
         ]
       },
       {
-        "name": "MH",
+        "name": "MH - Level 2 B",
         "parent": "Courses",
         "children":[
         {
-            "name": "Son of A - IN",
-            "parent": "Level 2: A"
+            "name": "Son of B - Present Students",
+            "parent": "Level 2: B"
           },
 
           {
-            "name": "Daughter of A - LATE",
-            "parent": "Level 2: A"
+            "name": "Daughter of B - Late Students",
+            "parent": "Level 2: B"
           },
 
           {
-            "name": "Daughter of A - OUT",
-            "parent": "Level 2: A"
+            "name": "Daughter of B - Absent Students",
+            "parent": "Level 2: B"
           }
         ] 
       }
