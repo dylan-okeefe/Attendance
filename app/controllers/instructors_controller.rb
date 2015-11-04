@@ -9,8 +9,9 @@ class InstructorsController < ApplicationController
    
   def show
      @instructor = Instructor.find(params[:id])
- #create hash for specific instructor here
- #instructor needs to have an association to the attendance(there is an association)
+    #create hash for specific instructor here
+     #@instructor= Hash.new
+     #instructor needs to have an association to the attendance(there is an association)
 
      render:json => @@data
    end
