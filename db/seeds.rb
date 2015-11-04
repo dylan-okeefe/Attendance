@@ -203,5 +203,5 @@ Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, cr
 Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, created_at: "2015-10-20 11:05:17"}])
 Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, created_at: "2015-10-19 08:30:12"}])
 
-Course.create!([{name: "brooklyn fellowship"}]) #latitude: 40.6981454, longitude: -73.9866087
-Course.create!([{name: "manhattan campus"}]) #latitude: 40.7053250, longitude: -74.0129460
+Course.create!([{name: "brooklyn fellowship", latitude: 40.6981454, longitude: -73.9866087}]) 
+Course.create!([{name: "manhattan campus", latitude: 40.7053250, longitude: -74.0129460}])
