@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-<h2 class="navbar-fixed-top"></h2>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid" id="button">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Student</a>
@@ -20,7 +18,7 @@
           <% if !user_signed_in? %>  
             <li><%= link_to("Log In", new_user_session_path) %></li>
             <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-          <%else%>
+          <% else%>
             <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
           <%end%>
         </ul>

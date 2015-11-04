@@ -1,5 +1,4 @@
-<h2 class="navbar-fixed-top">//Attendr</h2>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid" id="button">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Instructor</a>
@@ -62,13 +61,12 @@
 
           <!-- dropdown menu -->
             <ul class="dropdown-menu">
-                <li><a href="/students/">
+                <li>
                     <% Student.all.each do |student|%>
                       <li>
-                        <%= student.first_name%>
+                        <a href=""><%= student.first_name%></a>
                       </l1>
                     <%end%>
-                  </a>
                 </li>
             </ul>
         </div>
