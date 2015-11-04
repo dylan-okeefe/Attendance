@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get 'manage'
     end
   end
-  
+  get "/courses/:id/calendar" => "courses#calendar" 
   root 'static#home'
 
 
