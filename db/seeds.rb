@@ -21,6 +21,7 @@ Student.create([{first_name: "Damian", last_name: "Lajara"}])
 Student.create([{first_name: "Brian", last_name: "Mesa"}])
 
 
+<<<<<<< HEAD
 Attendance.create([{course_id: 1, student_id: 1, present: true, late: true, created_at: "2015-11-04 15:13:03"}])
 Attendance.create([{course_id: 1, student_id: 1, present: false, late: true, created_at: "2015-11-03 22:31:22"}])
 Attendance.create([{course_id: 1, student_id: 1, present: true, late: false, created_at: "2015-11-02 11:02:01"}])
@@ -205,3 +206,4 @@ Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, cr
 
 Course.create!([{name: "brooklyn fellowship", latitude: 40.6981454, longitude: -73.9866087}]) 
 Course.create!([{name: "manhattan campus", latitude: 40.7053250, longitude: -74.0129460}])
+

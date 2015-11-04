@@ -5,44 +5,35 @@ $(document).ready(function() {
 
 var treeData = [
   {
-    "name": "Courses",
+    "name": "Course Name",
     "parent": "Courses",
     "children": [
       {
-        "name": "BK",
+        "name": "Level 2: A Present",
         "parent": "Courses",
         "children": [
           {
             "name": "Son of A - Present Students",
             "parent": "Level 2: A"
           },
-
-          {
-            "name": "Daughter of A - Late Students",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A - Absent Students",
-            "parent": "Level 2: A"
-          }
         ]
       },
       {
-        "name": "MH - Level 2 B",
+        "name": "Level 2 B - Late  ",
         "parent": "Courses",
         "children":[
         {
-            "name": "Son of B - Present Students",
+            "name": "Son of B - Late Students",
             "parent": "Level 2: B"
           },
-
-          {
-            "name": "Daughter of B - Late Students",
-            "parent": "Level 2: B"
-          },
-
-          {
-            "name": "Daughter of B - Absent Students",
+        ] 
+      },
+      {
+        "name": "MH Level 2 C - Absent",
+        "parent": "Courses",
+        "children":[
+        {
+            "name": "Son of B - Absent Students",
             "parent": "Level 2: B"
           }
         ] 
