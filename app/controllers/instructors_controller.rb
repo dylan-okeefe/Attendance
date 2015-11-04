@@ -27,7 +27,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(instructor_params)
      respond_to do |format|
   	 	if @instructor.save
-  	  	  format.html { redirect_to @instructor, notice: 'New instructor has been successfully created.' }
+  	  	  format.html { redirect_to @instructor }
   			  format json { render :show, status: :created, location: @instructor }
   		else
   			  format.html { render :new } 

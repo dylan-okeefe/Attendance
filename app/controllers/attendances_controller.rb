@@ -5,6 +5,7 @@ class AttendancesController < ApplicationController
   end
 
   def show
+    if user_signed_in?
     @attendances = Attendance.select(current_user.student_id)
     @attendances = Attendance.select(current_admin.course_id)
     present = @attendances.where(:present=>true).count();
@@ -24,6 +25,7 @@ class AttendancesController < ApplicationController
       } 
     }
     render json: attendance_hash.to_json
+  end
   end
 
   def new
@@ -60,7 +62,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to @attendance, notice: 'attendance was successfully updated.' }
+        format.html { redirect_to @attendance}
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit }

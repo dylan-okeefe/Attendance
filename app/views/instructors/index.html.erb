@@ -62,13 +62,12 @@
 
           <!-- dropdown menu -->
             <ul class="dropdown-menu">
-                <li><a href="/students/">
+                <li>
                     <% Student.all.each do |student|%>
                       <li>
-                        <%= student.first_name%>
+                        <a href=""><%= student.first_name%></a>
                       </l1>
                     <%end%>
-                  </a>
                 </li>
             </ul>
         </div>
