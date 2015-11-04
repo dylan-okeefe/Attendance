@@ -31,8 +31,9 @@ class CoursesController < ApplicationController
         @friday << attendance
       end
     end
-      # binding.pry
 
+
+      # binding.pry
   end
 
   def new

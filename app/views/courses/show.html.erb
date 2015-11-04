@@ -13,7 +13,7 @@
     <td><%= @friday.select {|attendance| attendance.student_id == student.id }.first.created_at.strftime("%l:%M %p") %></td>
     <td>9</td>
     <td>9</td>
-    <td><%= @thursday.select {|attendance| attendance.student_id == student.id }.first.created_at.strftime("%l:%M %p") %></td>
+
     <td><%= @friday.select {|attendance| attendance.student_id == student.id }.first.created_at.strftime("%l:%M %p") %></td>
   </tr>
     <% end %>
