@@ -25,13 +25,7 @@
   </nav>
 
 <%if admin_signed_in? %>
-  <% provide(:title, current_admin.first_name) %>
-<% elsif user_signed_in? %>
-  <% provide(:title, current_user.first_name) %>
-  <h1>
-    <%#= gravatar_for current_admin %>
-  </h1>
-<%end%>
+  <h1><%= gravatar_for current_admin %></h1>
     <div class="container">
       <div class="centered">
         <div class="dropdown">
@@ -72,4 +66,5 @@
         </div>
       </div>
     </div> 
+<%end%>
 
