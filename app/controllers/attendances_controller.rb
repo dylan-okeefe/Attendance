@@ -6,6 +6,7 @@ class AttendancesController < ApplicationController
 
   def show
     @attendances = Attendance.select(current_user.student_id)
+    @attendances = Attendance.select(current_admin.course_id)
     present = @attendances.where(:present=>true).count();
     late = @attendances.where(:late=>true).count();
     attendance_hash = {
