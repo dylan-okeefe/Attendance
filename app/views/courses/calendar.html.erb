@@ -1,0 +1,30 @@
+<div class="calendar"><table>
+  <tr>
+    <th>Name</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+  </tr>
+    <% @table_data.each_pair do |key, student_data| %>
+  <tr>
+    <td><%= student_data[:name] %></td>
+    <td><%= student_data[:monday] %></td>
+    <td><%= student_data[:tuesday]%></td>
+    <td><%= student_data[:wednesday]%></td>
+    <td><%= student_data[:thursday]%></td>
+    <td><%= student_data[:friday]%></td>
+  </tr>
+    <% end %>
+
+
+
+
+
+
+
+
+
+</table>
+</div>
