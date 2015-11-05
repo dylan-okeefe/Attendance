@@ -1,9 +1,20 @@
 <% if user_signed_in? %>
-  <h1><%= gravatar_for current_user %></h1>
+ <div class="cont">
+    <div class="left">
+      <h1><%= gravatar_for current_user %></h1>
+      <div class="info">
+        <div class="email">
+          <span class="value"><%= current_user.first_name%> <%= current_user.last_name%></span><br>
+          <span class="key"><%= current_user.email%> </span><br>
+        </div>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
 <%end%>
 
 <%if user_signed_in?%>
  <div id="centered">
-    <%= link_to "Get to Class", {controller: "attendances", action: "create"},disabled: !@clickable %>   
+    <%= link_to "Get to Class", {controller: "attendances", action: "create"}, disabled: !@clickable %>   
   </div> 
 <%end%>
