@@ -1,8 +1,4 @@
 class InstructorsController < ApplicationController
-  @@data = File.read("#{Rails.root}/public/instructor.json")
-
-  
-
   def index
   	@instructors = Instructor.all
   end

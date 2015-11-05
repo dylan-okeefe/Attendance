@@ -4,8 +4,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-
-    # binding.pry
   end
 
   def calendar
@@ -16,7 +14,7 @@ class CoursesController < ApplicationController
     week = Range.new(date1, date2)
     @attendances = Attendance.where(created_at: week, course_id: @course.id)
     @table_data = Calendar.new(@attendances).run
-    # binding.pry
+  
     render layout: false
   end
 
