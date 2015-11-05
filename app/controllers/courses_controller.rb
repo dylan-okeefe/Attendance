@@ -4,6 +4,8 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @course = Course.find(params[:id])
+    @today_data = TodaySort.new(Attendance.where(created_at: (Time.zone.now.beginning_of_day..Time.zone.now.end_of_day), course_id: @course.id)).sort_students
   end
 
   def calendar
