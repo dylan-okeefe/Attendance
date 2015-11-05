@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
         @clickable = true
         session[:course_id] = @classroom.id
         session[:student_id] = @student.id
-        is_late? ? session[:late] = false : session[:late] = true
+        is_late? ? session[:late] = true : session[:late] = true
       end
     when "admin"
 
@@ -40,7 +40,7 @@ class StudentsController < ApplicationController
 
   def close_to_class?
     @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
-    #@classroom.distance < 0.2
+    @classroom.distance < 0.2
   end
 
   def grab_location

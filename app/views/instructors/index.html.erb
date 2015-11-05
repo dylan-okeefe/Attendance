@@ -25,7 +25,18 @@
   </nav>
 
 <%if admin_signed_in? %>
-  <h1><%= gravatar_for current_admin %></h1>
+      <div class="cont">
+        <div class="left">
+          <h1><%= gravatar_for current_admin %></h1>
+          <div class="info">
+            <div class="email">
+              <span class="value"><%= current_admin.first_name%> <%= current_admin.last_name%></span>
+              <span class="key"><%= current_admin.email%> </span><br>
+            </div>
+          </div>
+        </div>
+        <div class="right"></div>
+      </div>
     <div class="container">
       <div class="centered">
         <div class="dropdown">
