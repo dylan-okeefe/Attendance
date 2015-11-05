@@ -1,10 +1,35 @@
+<html>
+<head>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid" id="button">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Instructor</a>
+          <div id = 'list' class="hide">
+             <ul id = 'list-ul'>
+              <li>Records</li>
+              <li>Courses</li>
+              <li>Learn</li>
+            </ul>
+          </div>
+         </div>
+       <div>
+       <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <% if !admin_signed_in? %>  
+            <li><%= link_to("Log In", new_admin_session_path) %></li>
+            <li><%= link_to("Sign Up", new_admin_registration_path) %></li>
+          <%else%>
+            <li><%= link_to("Log Out", destroy_admin_session_path, method: :delete) %></li>
+          <%end%>
+        </ul>
+      </div> 
+    </div>
+  </nav>
+</head>
 
-
-
-  
-    <%if admin_signed_in? %>
-      <h1><%= gravatar_for current_admin %></h1>
-    <%end%>
+  <body>
+  </body>
+ </html>
 
 
 

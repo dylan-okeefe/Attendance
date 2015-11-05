@@ -85,6 +85,8 @@ div.container div.centered button.btn.btn-primary.btn-lg.outline:first-child {
     margin: 0;
     padding: 0.4em 0.8em;
     font-size: 3em;
+  
+
 }
 
 /** List Item Styles **/
@@ -121,3 +123,47 @@ div.container div.centered button.btn.btn-primary.btn-lg.outline:first-child {
     stroke-width: 2px;
   }
 /** Css Tree layout end **/
+
+/** gravatar **/
+* {
+  margin: 1; padding: 1px;
+}
+.cont {
+  font-size: 0;
+}
+.right, .left {
+  font-size: 1.6rem;
+  float: left;
+  min-height: 600px;
+  position: absolute;
+}
+
+.left {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 23%;
+  background-color: #333;
+}
+/*.right {
+  width: 1px;
+}*/
+
+.left img {
+  display: block;
+  width: 200px;
+  margin: auto;
+  margin-top: 80px;
+  border-radius: 1000px;
+}
+
+.left .info  {
+  border-top: 1px solid #2ff;
+  margin-top: 30px;
+  padding-top: 25px;
+  font-family: Helvetica;
+  color: #fff;
+}
+
+.left .info  .value {
+  font-weight: 100;
+}
