@@ -6,26 +6,29 @@ class AttendancesController < ApplicationController
 
   def show
     if user_signed_in?
-    @attendances = Attendance.select(current_user.student_id)
-    @attendances = Attendance.select(current_admin.course_id)
-    present = @attendances.where(:present=>true).count();
-    late = @attendances.where(:late=>true).count();
-    attendance_hash = {
-      "data": {
-        "content": [
-          {
-            "label": "Present",
-            "value": present
-          },
-          {
-            "label": "Lates",
-            "value": late
-          }
-        ]
-      } 
-    }
-    render json: attendance_hash.to_json
-  end
+      @attendances = Attendance.select(current_user.student_id)
+      present = @attendances.where(:present=>true).count();
+      late = @attendances.where(:late=>true).count();
+      attendance_hash = {
+        "data": {
+          "content": [
+            {
+              "label": "Present",
+              "value": present
+            },
+            {
+              "label": "Lates",
+              "value": late
+            }
+          ]
+        } 
+      }
+      render json: attendance_hash.to_json
+      @course_id = session[:course_id]
+    @student_id = session[:student_id]
+    @attendance = Attendance.new(course_id: @course_id, student_id: @student_id, late: session[:late], present: true)
+
+    end
   end
 
   def new

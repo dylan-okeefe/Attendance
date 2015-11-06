@@ -11,20 +11,29 @@ class StudentsController < ApplicationController
         @clickable = true
         session[:course_id] = @classroom.id
         session[:student_id] = @student.id
-        is_late? ? session[:late] = true : session[:late] = true
+        # is_late? ? session[:late] = true : session[:late] = false
       end
+      if !is_late? 
+        @clickable = true
+        session[:course_id] = @classroom.id
+        session[:student_id] = @student.id
+      session[:late] = true
+      else
+      session[:late] = false
+      end       
     when "admin"
 
     else
       redirect_to root_path
     end
+ 
   end
 
   def is_late?
     t = Time.now
     late_range = Range.new(
-              Time.local(t.year, t.month, t.day, 9, 01),
-              Time.local(t.year, t.month, t.day, 9, 15)
+              Time.local(t.year, t.month, t.day, 16, 01),
+              Time.local(t.year, t.month, t.day, 18, 30)
               )
     t == late_range
   end
@@ -33,13 +42,13 @@ class StudentsController < ApplicationController
     t = Time.now
     range = Range.new(
           Time.local(t.year, t.month, t.day, 7),
-          Time.local(t.year, t.month, t.day, 9, 15)
+          Time.local(t.year, t.month, t.day, 16, 01)
          )
     t == range
   end
 
   def close_to_class?
-    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
+    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).find_by(name: "brooklyn fellowship")
     @classroom.distance < 0.2
   end
 
