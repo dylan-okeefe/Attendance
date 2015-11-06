@@ -27,7 +27,6 @@ class Course < ActiveRecord::Base
   			'children': []
   		}
   	]
- 
 
 	json_data.to_json
   end
