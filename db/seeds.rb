@@ -202,6 +202,21 @@
 # Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, created_at: "2015-10-20 11:05:17"}])
 # Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, created_at: "2015-10-19 08:30:12"}])
 
+
+Attendance.create([{course_id: 1, student_id: 1, present: true, late: false, created_at: "2015-11-05 08:45:03"}])
+Attendance.create([{course_id: 1, student_id: 2, present: false, late: false, created_at: "2015-11-05 09:45:22"}])
+Attendance.create([{course_id: 1, student_id: 3, present: true, late: false, created_at: "2015-11-05 08:45:01"}])
+Attendance.create([{course_id: 1, student_id: 4, present: true, late: true, created_at: "2015-11-05 09:13:20"}])
+Attendance.create([{course_id: 1, student_id: 5, present: true, late: false, created_at: "2015-11-05 08:43:13"}])
+Attendance.create([{course_id: 1, student_id: 6, present: false, late: false, created_at: "2015-11-05 09:45:16"}])
+Attendance.create([{course_id: 1, student_id: 7, present: true, late: false, created_at: "2015-11-05 08:30:20"}])
+Attendance.create([{course_id: 1, student_id: 8, present: true, late: false, created_at: "2015-11-05 9:00:03"}])
+Attendance.create([{course_id: 1, student_id: 9, present: true, late: true, created_at: "2015-11-05 09:11:01"}])
+Attendance.create([{course_id: 1, student_id: 10, present: true, late: true, created_at: "2015-11-05 09:12:22"}])
+Attendance.create([{course_id: 1, student_id: 11, present: true, late: false, created_at: "2015-11-05 08:38:06"}])
+Attendance.create([{course_id: 1, student_id: 12, present: true, late: false, created_at: "2015-11-05 09:01:17"}])
+Attendance.create([{course_id: 1, student_id: 13, present: false, late: false, created_at: "2015-11-05 09:45:12"}])
+
 Course.create!([{name: "brooklyn fellowship", latitude: 40.6981454, longitude: -73.9866087}]) 
 Course.create!([{name: "manhattan campus", latitude: 40.7053250, longitude: -74.0129460}])
 
