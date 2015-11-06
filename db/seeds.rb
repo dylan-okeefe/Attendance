@@ -202,7 +202,6 @@
 # Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, created_at: "2015-10-20 11:05:17"}])
 # Attendance.create([{course_id: 1, student_id: 13, present: false, late: true, created_at: "2015-10-19 08:30:12"}])
 
-
 Attendance.create([{course_id: 1, student_id: 1, present: true, late: false, created_at: "2015-11-05 08:45:03"}])
 Attendance.create([{course_id: 1, student_id: 2, present: false, late: false, created_at: "2015-11-05 09:45:22"}])
 Attendance.create([{course_id: 1, student_id: 3, present: true, late: false, created_at: "2015-11-05 08:45:01"}])

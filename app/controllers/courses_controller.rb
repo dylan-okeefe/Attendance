@@ -6,47 +6,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-    treeData = 
-  {
-    "name": "Course Name",
-    "parent": "Courses",
-    "children": [
-      {
-        "name": "In",
-        "parent": "Courses",
-        "children": [
-          {
-            "name": "Son of A - Present Students",
-            "parent": "Level 2: A"
-          },
-        ]
-      },
-      {
-        "name": "Level 2 B - Late  ",
-        "parent": "Courses",
-        "children":[
-        {
-            "name": "Son of B - Late Students",
-            "parent": "Level 2: B"
-          },
-        ] 
-      },
-      {
-        "name": "MH Level 2 C - Absent",
-        "parent": "Courses",
-        "children":[
-        {
-            "name": "Son of B - Absent Students",
-            "parent": "Level 2: B"
-          }
-        ] 
-      }
-    ]
-  }
-
-
-    # render json: @course.render_json
-
     @today_data = TodaySort.new(params[:id]).run
   end
 
