@@ -6,59 +6,56 @@ class CoursesController < ApplicationController
   end
 
   def show
-  #   treeData = 
-  # {
-  #   "name": "Course Name",
-  #   "parent": "Courses",
-  #   "children": [
-  #     {
-  #       "name": "In",
-  #       "parent": "Courses",
-  #       "children": [
-  #         {
-  #           "name": "Son of A - Present Students",
-  #           "parent": "Level 2: A"
-  #         },
-  #       ]
-  #     },
-  #     {
-  #       "name": "Level 2 B - Late  ",
-  #       "parent": "Courses",
-  #       "children":[
-  #       {
-  #           "name": "Son of B - Late Students",
-  #           "parent": "Level 2: B"
-  #         },
-  #       ] 
-  #     },
-  #     {
-  #       "name": "MH Level 2 C - Absent",
-  #       "parent": "Courses",
-  #       "children":[
-  #       {
-  #           "name": "Son of B - Absent Students",
-  #           "parent": "Level 2: B"
-  #         }
-  #       ] 
-  #     }
-  #   ]
-  # }
+    treeData = 
+  {
+    "name": "Course Name",
+    "parent": "Courses",
+    "children": [
+      {
+        "name": "In",
+        "parent": "Courses",
+        "children": [
+          {
+            "name": "Son of A - Present Students",
+            "parent": "Level 2: A"
+          },
+        ]
+      },
+      {
+        "name": "Level 2 B - Late  ",
+        "parent": "Courses",
+        "children":[
+        {
+            "name": "Son of B - Late Students",
+            "parent": "Level 2: B"
+          },
+        ] 
+      },
+      {
+        "name": "MH Level 2 C - Absent",
+        "parent": "Courses",
+        "children":[
+        {
+            "name": "Son of B - Absent Students",
+            "parent": "Level 2: B"
+          }
+        ] 
+      }
+    ]
+  }
 
 
-    render json: @course.render_json
+    # render json: @course.render_json
 
-    @course = Course.find(params[:id])
-    @today_data = TodaySort.new(Attendance.where(created_at: (Time.zone.now.beginning_of_day..Time.zone.now.end_of_day), course_id: @course.id)).sort_students
+    @today_data = TodaySort.new(params[:id]).run
   end
 
   def calendar
-    @course = Course.find(params[:id])
     # @admin = Admin.find_by(:id => @course.instructor)
     date1 = params[:dateone].to_date
     date2 = params[:datetwo].to_date
     week = Range.new(date1, date2)
-    @attendances = Attendance.where(created_at: week, course_id: @course.id)
-    @table_data = Calendar.new(@attendances).run
+    @table_data = Calendar.new(params[:id], week).run
   
     render layout: false
   end
