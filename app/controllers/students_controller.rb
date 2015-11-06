@@ -16,7 +16,8 @@ class StudentsController < ApplicationController
         end
         
         session[:course_id] = @classroom.id
-        session[:student_id] = @student.id      
+        session[:student_id] = @student.id  
+    end    
     when "admin"
 
     else
