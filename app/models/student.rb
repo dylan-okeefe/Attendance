@@ -16,8 +16,8 @@ class Student < ActiveRecord::Base
   end
 
   def render_json
-  	json_data = {}
-  	json_data['name'] = self.first_name
+    json_data = {}
+    json_data['name'] = self.first_name
   	json_data
   end
 
