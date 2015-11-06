@@ -52,6 +52,25 @@ $(function() {
 </script>
 </head>
 <body>
+    <div class="row">
+  <div class="col-md-4"><h1>here</h1>
+    <% @today_data[:here].each do |student| %>
+    <%= student %><br>
+    <% end %>
+    </div>
+  <div class="col-md-4"><h1>late</h1>
+    <% @today_data[:late].each do |student| %>
+    <%= student %><br>
+    <% end %></div>
+  <div class="col-md-4"><h1>out</h1>
+    <% @today_data[:out].each do |student| %>
+    <%= student %><br>
+    <% end %></div>
+  </div>
+  <br />
+  <br />
+  <br />
+    </div>
     <div class="week-picker"></div>
     <br /><br />
     <label>Week :</label> <span id="startDate"></span> - <span id="endDate"></span>
