@@ -5,7 +5,9 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :students
   reverse_geocoded_by :latitude, :longitude
 
+
   def render_json
+
   	# binding.pry
   	late_students = Student.all() #.select {|student| student.is_late? } #students for specific course
   	absent_students = []
@@ -32,3 +34,4 @@ class Course < ActiveRecord::Base
   end
 
 end
+
