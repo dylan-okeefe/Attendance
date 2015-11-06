@@ -9,46 +9,39 @@ class StudentsController < ApplicationController
       current_student
       if close_to_class? && log_in_time?
         @clickable = true
+        if is_late? 
+          session[:late] = false
+        else
+          session[:present] = true
+        end
+        
         session[:course_id] = @classroom.id
-        session[:student_id] = @student.id
-        # is_late? ? session[:late] = true : session[:late] = false
-      end
-      if !is_late? 
-        @clickable = true
-        session[:course_id] = @classroom.id
-        session[:student_id] = @student.id
-      session[:late] = true
-      else
-      session[:late] = false
-      end       
+        session[:student_id] = @student.id      
     when "admin"
 
     else
       redirect_to root_path
     end
- 
   end
 
   def is_late?
-    t = Time.now
-    late_range = Range.new(
-              Time.local(t.year, t.month, t.day, 16, 01),
-              Time.local(t.year, t.month, t.day, 18, 30)
-              )
-    t == late_range
+    t = Time.zone.now
+    start_time = Time.zone.parse('9:01am')
+    end_time = start_time + 14.minute
+
+    t.between?(start_time, end_time)
   end
 
   def log_in_time?
-    t = Time.now
-    range = Range.new(
-          Time.local(t.year, t.month, t.day, 7),
-          Time.local(t.year, t.month, t.day, 16, 01)
-         )
-    t == range
+    t = Time.zone.now
+    start_time = Time.zone.parse('7am')
+    end_time = start_time + 9.hour + 15.minute
+    
+    t.between?(start_time, end_time)
   end
 
   def close_to_class?
-    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).find_by(name: "brooklyn fellowship")
+    @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
     @classroom.distance < 0.2
   end
 
