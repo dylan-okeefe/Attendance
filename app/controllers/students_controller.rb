@@ -40,7 +40,7 @@ class StudentsController < ApplicationController
 
   def close_to_class?
     @classroom = Course.near([@lat_lng[0], @lat_lng[1]]).first
-    @classroom.distance < 0.2
+    # @classroom.distance < 0.2
   end
 
   def grab_location
