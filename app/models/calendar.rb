@@ -1,18 +1,26 @@
 class Calendar
   attr_reader :table_data
 
- def initialize(attendances = [])
-  @attendances = attendances
+ def initialize(course_id, range)
+  @course_id = course_id
+  @range = range
   @table_data = {}
  end
 
+ def grab_attendances
+  # get all attendances for the week
+    @attendances = Attendance.where(created_at: @range, course_id: @course_id)
+ end
+
  def get_names
+  # get all the student names for the class
   @attendances.each do |attendance|
     @table_data[attendance.student_id] = {name: "#{attendance.student.first_name} #{attendance.student.last_name}"} if @table_data[attendance.student_id].nil?
   end
  end
 
  def get_week
+  # enter the check in time or absence for each student and sort it by day
     @attendances.each do |attendance|
       if attendance.created_at.to_date.monday? 
         if attendance.present == true 
@@ -49,6 +57,7 @@ class Calendar
   end
 
   def run
+    grab_attendances
     get_names
     get_week
     @table_data
