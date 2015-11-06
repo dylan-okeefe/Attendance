@@ -10,15 +10,15 @@
   <div class="carousel-inner" role="listbox">
 
     <div class="item active">
-      <img src="http://www.wired.com/images_blogs/rawfile/2013/10/DeathtoStock_Wired3-660x440.jpg">
+      <img src="<%= asset_path( 'randostudents.png' )%>">
     </div>
 
     <div class="item">
-      <img src="http://blog.fractureme.com/wp-content/uploads/2015/03/DeathtoStock_Medium6-copy.png">
+      <img src="<%= asset_path( 'waynejeremyumer.png' )%>">
     </div>
 
     <div class="item">
-      <img src="http://www.wired.com/images_blogs/rawfile/2013/10/DeathtoStock_Wired6-660x440.jpg">
+      <img src="<%= asset_path( 'us.png' ) %>">
     </div>
  </div>
 
@@ -50,6 +50,14 @@
 		</div>
 	</div>
 </div>
+      <!-- <video autoplay loop poster="vid.jpg" id="bgvid">
+        <source src="vid.webm" type="video/webm">DSC_0193.m4v
+        <source src="vid.mp4" type="video/mp4">
+      </video> -->
+      
+        <%#= #video_tag 'DSC_0193.jp.mv4', poster: 'poster.png', preload: true, autoplay: true, loop: true, muted: true, id: 'background-vid' %>
+
+
 </section>
 
 <section id="about">
