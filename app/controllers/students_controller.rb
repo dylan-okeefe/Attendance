@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
     t = Time.zone.now
     start_time = Time.zone.parse('7am')
     end_time = start_time + 9.hour + 15.minute
-    
+    #i put 9.hour just for testing. It should be changed to 2.hour
     t.between?(start_time, end_time)
   end
 
