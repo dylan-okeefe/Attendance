@@ -3,17 +3,10 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid" id="button">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Instructor</a>
-          <div id = 'list' class="hide">
-             <ul id = 'list-ul'>
-              <li>Records</li>
-              <li>Courses</li>
-              <li>Learn</li>
-            </ul>
-          </div>
+          <a class="navbar-brand" href="#"><%= current_admin.first_name%></a>
          </div>
        <div>
-       <ul class="nav navbar-nav">
+       <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="#">Home</a></li>
           <% if !admin_signed_in? %>  
             <li><%= link_to("Log In", new_admin_session_path) %></li>
