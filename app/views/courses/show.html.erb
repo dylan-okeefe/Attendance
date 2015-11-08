@@ -17,7 +17,7 @@ $(function() {
 
     var  queryDatabase = function(startDate, endDate) {
           $.get("/courses/1/calendar?dateone=" + startDate + "&datetwo=" + endDate, function(html) {
-            $(".calendar").replaceWith(html);
+            $(".rwd-table").replaceWith(html);
           }
         )}
     
@@ -70,11 +70,15 @@ $(function() {
   <br />
   <br />
   <br />
+  <br />
+  <br />
     </div>
     <div class="week-picker"></div>
     <br /><br />
+    <div class="show-week">
     <label>Week :</label> <span id="startDate"></span> - <span id="endDate"></span>
-    <div class="calendar"></div>
+    </div>
+    <table class="rwd-table"></table>
 </body>
 </html>
 
