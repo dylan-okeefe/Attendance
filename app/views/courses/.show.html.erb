@@ -1,37 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A layout example that shows off a responsive pricing table.">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-
-
-
-<!--[if lte IE 8]>
-  
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-  
-<![endif]-->
-<!--[if gt IE 8]><!-->
-  
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  
-<!--<![endif]-->
-
-
-
-
-
-  
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/pricing-old-ie.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/pricing.css">
-    <!--<![endif]-->
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -52,7 +21,7 @@ $(function() {
 
     var  queryDatabase = function(startDate, endDate) {
           $.get("/courses/1/calendar?dateone=" + startDate + "&datetwo=" + endDate, function(html) {
-            $(".student-table").replaceWith(html);
+            $(".rwd-table").replaceWith(html);
           }
         )}
     
@@ -85,11 +54,6 @@ $(function() {
     $('.week-picker .ui-datepicker-calendar tr').live('mouseleave', function() { $(this).find('td a').removeClass('ui-state-hover'); });
 });
 </script>
-
-    
-
-    
-
 </head>
 <body>
 
@@ -152,13 +116,33 @@ $(function() {
         </div> <!-- end pricing-tables -->
 
 
+
+    <div class="row">
+  <div class="col-md-4"><h1>here</h1>
+    <% @today_data[:here].each do |student| %>
+    <%= student %><br>
+    <% end %>
+    </div>
+  <div class="col-md-4"><h1>late</h1>
+    <% @today_data[:late].each do |student| %>
+    <li><%= student %></li>
+    <% end %></div>
+  <div class="col-md-4"><h1>out</h1>
+    <% @today_data[:out].each do |student| %>
+    <li><%= student %></li>
+    <% end %></div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
     </div>
     <div class="week-picker"></div>
     <br /><br />
     <div class="show-week">
     <label>Week :</label> <span id="startDate"></span> - <span id="endDate"></span>
     </div>
-    <table class="student-table"></table>
+    <table class="rwd-table"></table>
 </body>
 </html>
-
