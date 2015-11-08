@@ -225,6 +225,22 @@ Attendance.create([{course_id: 1, student_id: 9, present: true, late: true, crea
 Attendance.create([{course_id: 1, student_id: 11, present: true, late: false, created_at: "2015-11-06 08:38:06"}])
 Attendance.create([{course_id: 1, student_id: 12, present: true, late: false, created_at: "2015-11-06 09:01:17"}])
 
+Attendance.create([{course_id: 1, student_id: 1, present: true, late: false, created_at: "2015-11-08 08:45:03"}])
+Attendance.create([{course_id: 1, student_id: 2, present: false, late: false, created_at: "2015-11-08 09:45:22"}])
+Attendance.create([{course_id: 1, student_id: 3, present: true, late: false, created_at: "2015-11-08 08:45:01"}])
+Attendance.create([{course_id: 1, student_id: 4, present: true, late: true, created_at: "2015-11-08 09:13:20"}])
+Attendance.create([{course_id: 1, student_id: 5, present: true, late: false, created_at: "2015-11-08 08:43:13"}])
+Attendance.create([{course_id: 1, student_id: 6, present: false, late: false, created_at: "2015-11-08 09:45:16"}])
+Attendance.create([{course_id: 1, student_id: 7, present: true, late: false, created_at: "2015-11-08 08:30:20"}])
+Attendance.create([{course_id: 1, student_id: 8, present: true, late: false, created_at: "2015-11-08 9:00:03"}])
+Attendance.create([{course_id: 1, student_id: 9, present: true, late: true, created_at: "2015-11-08 09:11:01"}])
+Attendance.create([{course_id: 1, student_id: 10, present: true, late: true, created_at: "2015-11-08 09:12:22"}])
+Attendance.create([{course_id: 1, student_id: 11, present: true, late: false, created_at: "2015-11-08 08:38:06"}])
+Attendance.create([{course_id: 1, student_id: 12, present: true, late: false, created_at: "2015-11-08 09:01:17"}])
+Attendance.create([{course_id: 1, student_id: 13, present: false, late: false, created_at: "2015-11-08 09:45:12"}])
+
+
+
 StudentCourse.create([{course_id: 1, student_id: 1}])
 StudentCourse.create([{course_id: 1, student_id: 2}])
 StudentCourse.create([{course_id: 1, student_id: 3}])

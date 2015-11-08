@@ -20,31 +20,15 @@ div.col-md-4 {
 
 .student-table {
   margin: auto;
+
+
 }
 
-.student-table:tr {
-  border: 2px solid #29b8e5;
-  font-size: 20px;
+body {
+  background-image: url(footer_lodyas.png);
 }
 
-.student-table th{
-  background: #C9C9C9;
-  padding: 20px;
-  font-size: 30px;
-  border: 2px solid #29b8e5;
-}
 
-.student-table tr {
-  background: #fff;
-  font-size: 20px;
-  border:2px solid #e7e7e7;
-  padding: 8px;
-}
-
-.student-table td{
-  border-right:2px solid #29b8e5;
-  border-left: 2px solid #29b8e5;
-}
 /*
  * -- BASE STYLES --
  * Most of these are inherited from Base, but I want to change a few.
@@ -104,8 +88,10 @@ p {
  * Every pricing table has the .pricing-table class
  */
 .pricing-table {
+    border: 1px solid #ddd;
     margin: 0 0.5em 2em;
     padding: 0 0 3em;
+    overflow: hidden;
 }
 
 /*
@@ -183,65 +169,6 @@ p {
 
 
 
-/*
- * -- PRICING TABLE BUTTON --
- * Styles for the "Choose" button at the bottom of a pricing table.
- * This inherits from Pure Button.
- */
-.button-choose {
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #333;
-    border-radius: 2em;
-    font-weight: bold;
-    position: relative;
-    bottom: -1.5em;
-}
-
-.information-head {
-    color: black;
-    font-weight: 500;
-}
-
-.footer {
-    background: #111;
-    color: #888;
-    text-align: center;
-}
-    .footer a {
-        color: #ddd;
-    }
-
-
-/*
- * -- PRICING TABLE BUTTON --
- * Styles for the "Choose" button at the bottom of a pricing table.
- * This inherits from Pure Button.
- */
-.button-choose {
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #333;
-    border-radius: 2em;
-    font-weight: bold;
-    position: relative;
-    bottom: -1.5em;
-}
-
-.information-head {
-    color: black;
-    font-weight: 500;
-}
-
-.footer {
-    background: #111;
-    color: #888;
-    text-align: center;
-}
-    .footer a {
-        color: #ddd;
-    }
-
 
 
 /*
@@ -272,4 +199,5 @@ p {
         font-size: 3em;
     }
 }
+
 
