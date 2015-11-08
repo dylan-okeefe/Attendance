@@ -121,9 +121,7 @@ a {
 /** error message **/
 
 .row {
-	font-size: 20px;
-	color: red;
-	font-weight: bold;
+	font-size: 14px;
 }
 
 /** remember me box for password **/
@@ -137,3 +135,19 @@ a {
 body {
   background-image: url(footer_lodyas.png);
 }
+/** style for notice of successfull sign in **/
+.alert-success{
+	background-color: #29b8e5;
+	color: white;	
+
+}
+
+/** style for homepage left upper hand corner "ge attendr//" **/
+.btn-success {
+	background-color: #29b8e5;
+}
+
+.cropcircle {
+	border-color: #29b8e5;
+}
+
