@@ -1,49 +1,24 @@
 <% if !user_signed_in? || !admin_signed_in? %>
-<nav class="navbar navbar-default navbar-fixed-top">
-  
-    <div class="navbar-header">
-    <div class="btn btn-success btn-xlg">//Attendr</div>
+  <nav class="navbar navbar-default navbar-fixed-top">
     
-  </div>
-  <button type="button" data-target="#navbarCollapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-   </button>
-
-   <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/users/sign_up">Student</a></li>
-
-            <li><a href="/admins/sign_up">Instructor</a></li>
-            <li><a href="..#about">About</a></li>
-        </ul>
+      <div class="navbar-header">
+      <div class="btn btn-success btn-xlg">//Attendr</div>
+      
     </div>
-</nav>
+    <button type="button" data-target="#navbarCollapse" class="navbar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+     </button>
 
-<% elsif admin_signed_in? %>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid" id="button">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Instructor</a>
-            <div id = 'list' class="hide">
-               <ul id = 'list-ul'>
-                <li>Records</li>
-                <li>Courses</li>
-                <li>Learn</li>
-              </ul>
-            </div>
-           </div>
-         <div>
-         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-           
-              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
-            
+     <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="/users/sign_up">Student</a></li>
+
+              <li><a href="/admins/sign_up">Instructor</a></li>
+              <li><a href="..#about">About</a></li>
           </ul>
-        </div> 
-    </div>
+      </div>
   </nav>
-
-  <% end %>
+<%end%>
