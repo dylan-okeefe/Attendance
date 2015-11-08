@@ -1,32 +1,3 @@
-//navbar drop down
-function navbar_dropdown(){
-    var timer;
-    var nav = document.getElementsByClassName('navbar-brand')[0];
-    var list = document.getElementById('list');
-    var ul = document.getElementById('list-ul');
-    
-    nav.addEventListener('mouseover', function(event){
-        list.className = '';
-        clearTimeout(timer);
-    });    
-    nav.addEventListener('mouseout', function(event){
-        timer = setTimeout(hideMenu,600);
-    });    
-    ul.addEventListener('mouseover', function(event){
-        list.className = '';
-        clearTimeout(timer);
-    });    
-    ul.addEventListener('mouseout', function(event){
-        timer = setTimeout(hideMenu,600);
-    });
-
-
-    function hideMenu() {
-        list.className = 'hide';
-    }
-
-}
-
 // this grabs the users geolocation on the loading of the page
 // i hope
 function setGeoCookie(position) {
@@ -42,7 +13,6 @@ function getGeoLocation() {
 document.onreadystatechange = function() {
     if (document.readyState == 'complete') {
         getGeoLocation();
-        navbar_dropdown();
     }
 };
 
