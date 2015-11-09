@@ -13,13 +13,39 @@
    </button>
 
    <div id="navbarCollapse" class="collapse navbar-collapse">
+        
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/users/sign_up">Student</a></li>
+           
+           <div class="dropdown-two">
+            
+    <!-- trigger button -->
+            <button>Student</button>
 
-            <li><a href="/admins/sign_up">Instructor</a></li>
-            <li><a href="..#about">About</a></li>
-        </ul>
-    </div>
+            <!-- dropdown menu -->
+            <ul class="dropdown-menu-two">
+                <li><a href="/users/sign_up">Sign up</a></li>
+               <li><a href="/users/sign_in">Sign in</a></li>
+            </ul>
+          </div>
+
+
+          <div class="dropdown-two">
+
+            <!-- trigger button -->
+            <button>Instructor</button>
+
+
+            <!-- dropdown menu -->
+            <ul class="dropdown-menu-two">
+                <li><a href="/users/sign_up">Sign up</a></li>
+               <li><a href="/users/sign_in">Sign in</a></li>
+               
+            </ul>
+
+          </div>
+
+               </ul>
+            </div>
 </nav>
 
 <% elsif admin_signed_in? %>

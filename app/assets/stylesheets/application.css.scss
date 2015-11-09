@@ -28,11 +28,11 @@
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .theme-showcase > p > .btn {
-  margin: 5px 0;
+  margin: 1px 0;
 }
 
 .navbar {
@@ -41,16 +41,16 @@
 }
 
 .btn-xlg {
-    font-size: 22px; //change this to your desired size
+    font-size: 30px; //change this to your desired size
     line-height: normal;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 400px;
+    border-radius: 90px;
 }
 
 .navbar-nav > li > a {
 color: white !important;
-font-size: 16px !important;
+font-size: 20px !important;
 	
 }
 
@@ -145,9 +145,8 @@ body {
 /** style for homepage left upper hand corner "ge attendr//" **/
 .btn-success {
 	background-color: #29b8e5;
+	color: white;
 }
 
-.cropcircle {
-	border-color: #29b8e5;
-}
+
 
