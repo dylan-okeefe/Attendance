@@ -6,6 +6,14 @@
     min-width: 100%;
 }
 
+.navbar-nav > li > a {
+
+	
+}
+
+
+
+
 #info {
 	padding-top: 35px;
 }
@@ -37,7 +45,7 @@
     background: #eee no-repeat center;
     background-size: cover;
     border-style: solid;
-    border-color: #7FF6BF;
+    border-color: #29b8e5;
     margin-left: auto;
 	margin-right: auto;
 	float: none !important;
@@ -77,4 +85,78 @@
 	opacity: .5;
 }
 
-    
+
+.dropdown-two {
+    position: relative;
+
+    /** Make it fit tightly around it's children */
+    display: inline-block;
+}
+
+.dropdown-two .dropdown-menu-two {
+    position: absolute;
+
+    /**
+     * Set the top of the dropdown menu to be positioned 100%
+     * from the top of the container, and aligned to the left.
+     */
+    top: 100%;
+    left: 0;
+
+    /** Allow no empty space between this and .dropdown */
+    margin: 0;
+}
+
+.dropdown-two:hover .dropdown-menu-two {
+
+    /** Show dropdown menu */
+    display: block;
+}
+
+.dropdown-two {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-two .dropdown-menu-two {
+    position: absolute;
+    top: 100%;
+    display: none;
+    margin: 0;
+
+    /****************
+     ** NEW STYLES **
+     ****************/
+
+    list-style: none; /** Remove list bullets */
+    width: 100%; /** Set the width to 100% of it's parent */
+    padding: 0;
+}
+
+.dropdown-two:hover .dropdown-menu-two {
+    display: block;
+}
+
+/** Button Styles **/
+.dropdown-two button {
+    background: #29b8e5;
+    color: #FFFFFF;
+    border: none;
+    margin: 0;
+    padding: 0.0em 0.9em;
+    font-size: 2em;
+}
+
+/** List Item Styles **/
+.dropdown-two a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    background: #29b8e5;
+    color: white;
+}
+
+/** List Item Hover Styles **/
+.dropdown-two a:hover {
+    background: #BBBBBB;
+}
