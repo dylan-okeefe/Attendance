@@ -1,7 +1,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid" id="button">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#"><%= current_admin.first_name%></a>
+            <a class="navbar-brand" href="#"><%= current_admin.try(:first_name)%></a>
            </div>
          <div>
          <ul class="nav navbar-nav navbar-right">
@@ -23,8 +23,8 @@
           <h1><%= gravatar_for current_admin %></h1>
           <div class="info">
             <div class="email">
-              <span class="value"><%= current_admin.first_name%> <%= current_admin.last_name%></span>
-              <span class="key"><%= current_admin.email%> </span><br>
+              <span class="value"><%= current_admin.try(:first_name) %> <%= current_admin.try(:last_name) %></span>
+              <span class="key"><%= current_admin.try(:email) %> </span><br>
             </div>
           </div>
         </div>
