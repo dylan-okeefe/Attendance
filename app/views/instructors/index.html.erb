@@ -41,8 +41,8 @@
               <ul class="dropdown-menu">
                   <li><%#= link_to course.name, course_path(course) %></li>
                     <li>
-                      <a href="/courses/">
                         <% Course.all.each do |course|%>
+                          <a href="/courses/<%= course.id %>">
                           <li>
                             <%= course.name%>
                           </li>
